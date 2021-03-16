@@ -16,30 +16,20 @@ class ViewController: UIViewController {
     }
     
     fileprivate func setUpViews() {
-        
-       let redView = [UIColor.black, UIColor.gray, .darkGray].map { (color) -> UIView in
-            let colorView = UIView()
-            colorView.backgroundColor = color
-            return colorView
-        }
-        
-        let topView = UIStackView(arrangedSubviews: redView)
-        topView.distribution = .fillEqually
-        
+  
+        let topView = TopInteractionStackView()
         let blueView = UIView()
         blueView.backgroundColor = .blue
-
-        let yellowView = UIView()
-        yellowView.backgroundColor = .yellow
+        let yellowView = HomeClassStackView()
         let stackView = UIStackView(arrangedSubviews: [topView,blueView,yellowView])
         view.addSubview(stackView)
         stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.fillToSuperView()
-        yellowView.anchor(top: nil, leading: nil, trailing: nil, bottom: nil, size: .init(width: 120, height: 120))
+        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor,trailing: view.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor)
+       
         topView.anchor(top: nil, leading: nil, trailing: nil, bottom: nil, size: .init(width: 100, height: 100))
 
-        
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
     }
 
 }
