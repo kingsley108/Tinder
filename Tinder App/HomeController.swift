@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,10 +18,10 @@ class ViewController: UIViewController {
     fileprivate func setUpViews() {
   
         let topView = TopInteractionStackView()
-        let blueView = UIView()
-        blueView.backgroundColor = .blue
+        let userPhoto = SwipeablePhoto()
+        userPhoto.photoView.image = #imageLiteral(resourceName: "lady5c")
         let yellowView = HomeClassStackView()
-        let stackView = UIStackView(arrangedSubviews: [topView,blueView,yellowView])
+        let stackView = UIStackView(arrangedSubviews: [topView,userPhoto,yellowView])
         view.addSubview(stackView)
         stackView.axis = .vertical
         stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor,trailing: view.trailingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor)
@@ -30,6 +30,7 @@ class ViewController: UIViewController {
 
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
+        stackView.bringSubviewToFront(userPhoto)
     }
 
 }
