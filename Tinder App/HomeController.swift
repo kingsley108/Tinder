@@ -9,7 +9,7 @@ import UIKit
 
 class HomeController: UIViewController {
     
-    let users = [User(name: "Jane", age: 18, imageProfile: #imageLiteral(resourceName: "jane1"), profession: "Teacher"), User(name: "Kelly", age: 23, imageProfile: #imageLiteral(resourceName: "lady5c"), profession: "Muisc DJ")]
+    let users = [User(name: "Jane", age: 18, imageProfile: #imageLiteral(resourceName: "jane1"), profession: "Teacher").convertToCardModel(), User(name: "Kelly", age: 23, imageProfile: #imageLiteral(resourceName: "lady5c"), profession: "Muisc DJ").convertToCardModel()]
     let cardContainer = SwipeablePhoto()
 
     override func viewDidLoad() {
@@ -22,12 +22,8 @@ class HomeController: UIViewController {
     fileprivate func setUpCardView() {
         users.forEach { (user) in
             let swipeableUser = SwipeablePhoto()
-            swipeableUser.photoView.image = user.imageProfile
-            let attributedString = NSMutableAttributedString(string: user.name!, attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 35)])
-            attributedString.append(NSAttributedString(string: "  "))
-            attributedString.append(NSAttributedString(string: "\(user.age ?? 0)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
-            attributedString.append(NSAttributedString(string: "\n \(user.profession ?? "")" , attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
-            swipeableUser.userDetails.attributedText = attributedString
+            swipeableUser.photoView.image = user.imageName
+            swipeableUser.informationDetails.attributedText = user.attributedString
             cardContainer.addSubview(swipeableUser)
             swipeableUser.fillToSuperView()
             

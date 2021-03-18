@@ -16,7 +16,7 @@ class SwipeablePhoto: UIView {
         return img
     }()
     
-    var userDetails: UILabel = {
+    var informationDetails: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = .white
@@ -38,8 +38,8 @@ class SwipeablePhoto: UIView {
     fileprivate func setUpView() {
         addSubview(photoView)
         photoView.fillToSuperView()
-        addSubview(userDetails)
-        userDetails.anchor(top: nil, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 0))
+        addSubview(informationDetails)
+        informationDetails.anchor(top: nil, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 0))
     }
     
     
