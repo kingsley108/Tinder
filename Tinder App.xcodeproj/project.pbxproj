@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F7B81392603319C0073A70E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B81382603319C0073A70E /* User.swift */; };
 		1F7B8142260344BE0073A70E /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B8141260344BE0073A70E /* CardViewModel.swift */; };
-		1FAD71472601E35C006A33EE /* SwipeablePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD71462601E35C006A33EE /* SwipeablePhoto.swift */; };
+		1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B8151260348820073A70E /* AdvertiserViewModels.swift */; };
+		1FAD71472601E35C006A33EE /* SwipeablePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD71462601E35C006A33EE /* SwipeablePhotoView.swift */; };
 		1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A0260095F800E4D9C5 /* AppDelegate.swift */; };
 		1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */; };
 		1FC358A5260095F800E4D9C5 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A4260095F800E4D9C5 /* HomeController.swift */; };
@@ -42,7 +43,8 @@
 /* Begin PBXFileReference section */
 		1F7B81382603319C0073A70E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1F7B8141260344BE0073A70E /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
-		1FAD71462601E35C006A33EE /* SwipeablePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePhoto.swift; sourceTree = "<group>"; };
+		1F7B8151260348820073A70E /* AdvertiserViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiserViewModels.swift; sourceTree = "<group>"; };
+		1FAD71462601E35C006A33EE /* SwipeablePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePhotoView.swift; sourceTree = "<group>"; };
 		1FC3589D260095F800E4D9C5 /* Tinder App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC358A0260095F800E4D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,24 @@
 			path = StackViews;
 			sourceTree = "<group>";
 		};
+		1F7B814C260347F30073A70E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FC358A4260095F800E4D9C5 /* HomeController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1F7B81502603485A0073A70E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1F7B81382603319C0073A70E /* User.swift */,
+				1F7B8141260344BE0073A70E /* CardViewModel.swift */,
+				1F7B8151260348820073A70E /* AdvertiserViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		1FC35894260095F800E4D9C5 = {
 			isa = PBXGroup;
 			children = (
@@ -118,17 +138,16 @@
 		1FC3589F260095F800E4D9C5 /* Tinder App */ = {
 			isa = PBXGroup;
 			children = (
+				1F7B81502603485A0073A70E /* ViewModels */,
+				1F7B814C260347F30073A70E /* Controllers */,
 				1F7B813D260332050073A70E /* StackViews */,
 				1FC358A0260095F800E4D9C5 /* AppDelegate.swift */,
-				1F7B8141260344BE0073A70E /* CardViewModel.swift */,
-				1FAD71462601E35C006A33EE /* SwipeablePhoto.swift */,
+				1FAD71462601E35C006A33EE /* SwipeablePhotoView.swift */,
 				1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */,
-				1FC358A4260095F800E4D9C5 /* HomeController.swift */,
 				1FC358D3260098EF00E4D9C5 /* Helper Files */,
 				1FC358AB260095F800E4D9C5 /* LaunchScreen.storyboard */,
 				1FC358AE260095F800E4D9C5 /* Info.plist */,
 				1FC358E42600AF9D00E4D9C5 /* Assets.xcassets */,
-				1F7B81382603319C0073A70E /* User.swift */,
 			);
 			path = "Tinder App";
 			sourceTree = "<group>";
@@ -295,8 +314,9 @@
 				1F7B81392603319C0073A70E /* User.swift in Sources */,
 				1FC358D52600990200E4D9C5 /* Exensions.swift in Sources */,
 				1F7B8142260344BE0073A70E /* CardViewModel.swift in Sources */,
+				1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */,
 				1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */,
-				1FAD71472601E35C006A33EE /* SwipeablePhoto.swift in Sources */,
+				1FAD71472601E35C006A33EE /* SwipeablePhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

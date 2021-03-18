@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct User {
+struct User: ProducesCardViewModel {
     let name: String?
     let age: Int?
     let imageProfile: UIImage?
@@ -19,6 +19,6 @@ struct User {
         attributedString.append(NSAttributedString(string: "  "))
         attributedString.append(NSAttributedString(string: "\(age ?? 0)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
         attributedString.append(NSAttributedString(string: "\n \(profession ?? "")" , attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
-        return CardViewModel(imageName: imageProfile, attributedString: attributedString)
+        return CardViewModel(imageAsset: imageProfile, attributedString: attributedString, textAlignment: .left)
     }
 }

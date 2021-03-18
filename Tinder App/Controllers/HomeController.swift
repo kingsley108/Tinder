@@ -6,29 +6,34 @@
 //
 
 import UIKit
+import Foundation
 
 class HomeController: UIViewController {
     
-    let users = [User(name: "Jane", age: 18, imageProfile: #imageLiteral(resourceName: "jane1"), profession: "Teacher").convertToCardModel(), User(name: "Kelly", age: 23, imageProfile: #imageLiteral(resourceName: "lady5c"), profession: "Muisc DJ").convertToCardModel()]
-    let cardContainer = SwipeablePhoto()
+    var users = ([User(name: "Jane", age: 18, imageProfile: #imageLiteral(resourceName: "jane1"), profession: "Teacher"), User(name: "Kelly", age: 23, imageProfile: #imageLiteral(resourceName: "lady5c"), profession: "Muisc DJ"), AdvertiserViewModels(brandName: "", photoName: #imageLiteral(resourceName: "slide_out_menu_poster"))] as [ProducesCardViewModel]).map { (model) -> CardViewModel in
+    model.convertToCardModel()
+}
+    
+    
+    let cardContainer = SwipeablePhotoView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUpViews()
         setUpCardView()
+        
     }
     
     fileprivate func setUpCardView() {
         users.forEach { (user) in
-            let swipeableUser = SwipeablePhoto()
-            swipeableUser.photoView.image = user.imageName
-            swipeableUser.informationDetails.attributedText = user.attributedString
+            let swipeableUser = SwipeablePhotoView()
+            swipeableUser.user = user
             cardContainer.addSubview(swipeableUser)
             swipeableUser.fillToSuperView()
-            
+
         }
-        
+
     }
     
     

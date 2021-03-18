@@ -7,7 +7,16 @@
 
 import UIKit
 
-class SwipeablePhoto: UIView {
+class SwipeablePhotoView: UIView {
+    var user: CardViewModel? {
+        didSet {
+            guard let user = self.user else { return}
+            photoView.image = user.imageAsset
+            informationDetails.attributedText = user.attributedString
+            informationDetails.textAlignment = user.textAlignment ?? .center
+        }
+    }
+    
     var photoView: UIImageView = {
         let img = UIImageView()
         img.layer.cornerRadius = 10
@@ -20,7 +29,6 @@ class SwipeablePhoto: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = .white
-        
         return label
     }()
     

@@ -7,8 +7,12 @@
 
 import Foundation
 import UIKit
+protocol ProducesCardViewModel {
+    func convertToCardModel() -> CardViewModel
+}
 
 struct CardViewModel {
-    let imageName: UIImage?
+    let imageAsset: UIImage?
     let attributedString: NSAttributedString?
+    let textAlignment: NSTextAlignment?
 }
