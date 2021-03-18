@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F7B81392603319C0073A70E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B81382603319C0073A70E /* User.swift */; };
 		1FAD71472601E35C006A33EE /* SwipeablePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD71462601E35C006A33EE /* SwipeablePhoto.swift */; };
 		1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A0260095F800E4D9C5 /* AppDelegate.swift */; };
 		1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */; };
 		1FC358A5260095F800E4D9C5 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A4260095F800E4D9C5 /* HomeController.swift */; };
-		1FC358AA260095F800E4D9C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC358A9260095F800E4D9C5 /* Assets.xcassets */; };
 		1FC358AD260095F800E4D9C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC358AB260095F800E4D9C5 /* LaunchScreen.storyboard */; };
 		1FC358B8260095F900E4D9C5 /* Tinder_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358B7260095F900E4D9C5 /* Tinder_AppTests.swift */; };
 		1FC358C3260095F900E4D9C5 /* Tinder_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358C2260095F900E4D9C5 /* Tinder_AppUITests.swift */; };
@@ -39,12 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F7B81382603319C0073A70E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1FAD71462601E35C006A33EE /* SwipeablePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePhoto.swift; sourceTree = "<group>"; };
 		1FC3589D260095F800E4D9C5 /* Tinder App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC358A0260095F800E4D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1FC358A4260095F800E4D9C5 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		1FC358A9260095F800E4D9C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FC358AC260095F800E4D9C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FC358AE260095F800E4D9C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FC358B3260095F900E4D9C5 /* Tinder AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tinder AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F7B813D260332050073A70E /* StackViews */ = {
+			isa = PBXGroup;
+			children = (
+				1FC358E92600B24D00E4D9C5 /* TopInteractionStackView.swift */,
+				1FC358DF2600AF2B00E4D9C5 /* HomeClassStackView.swift */,
+			);
+			path = StackViews;
+			sourceTree = "<group>";
+		};
 		1FC35894260095F800E4D9C5 = {
 			isa = PBXGroup;
 			children = (
@@ -107,17 +116,16 @@
 		1FC3589F260095F800E4D9C5 /* Tinder App */ = {
 			isa = PBXGroup;
 			children = (
-				1FC358D3260098EF00E4D9C5 /* Helper Files */,
+				1F7B813D260332050073A70E /* StackViews */,
 				1FC358A0260095F800E4D9C5 /* AppDelegate.swift */,
 				1FAD71462601E35C006A33EE /* SwipeablePhoto.swift */,
 				1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */,
 				1FC358A4260095F800E4D9C5 /* HomeController.swift */,
-				1FC358E92600B24D00E4D9C5 /* TopInteractionStackView.swift */,
-				1FC358DF2600AF2B00E4D9C5 /* HomeClassStackView.swift */,
-				1FC358A9260095F800E4D9C5 /* Assets.xcassets */,
+				1FC358D3260098EF00E4D9C5 /* Helper Files */,
 				1FC358AB260095F800E4D9C5 /* LaunchScreen.storyboard */,
 				1FC358AE260095F800E4D9C5 /* Info.plist */,
 				1FC358E42600AF9D00E4D9C5 /* Assets.xcassets */,
+				1F7B81382603319C0073A70E /* User.swift */,
 			);
 			path = "Tinder App";
 			sourceTree = "<group>";
@@ -253,7 +261,6 @@
 			files = (
 				1FC358AD260095F800E4D9C5 /* LaunchScreen.storyboard in Resources */,
 				1FC358E52600AF9D00E4D9C5 /* Assets.xcassets in Resources */,
-				1FC358AA260095F800E4D9C5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +289,7 @@
 				1FC358E02600AF2B00E4D9C5 /* HomeClassStackView.swift in Sources */,
 				1FC358A5260095F800E4D9C5 /* HomeController.swift in Sources */,
 				1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */,
+				1F7B81392603319C0073A70E /* User.swift in Sources */,
 				1FC358D52600990200E4D9C5 /* Exensions.swift in Sources */,
 				1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */,
 				1FAD71472601E35C006A33EE /* SwipeablePhoto.swift in Sources */,

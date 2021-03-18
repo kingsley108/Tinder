@@ -8,7 +8,7 @@
 import UIKit
 
 class SwipeablePhoto: UIView {
-    lazy var photoView: UIImageView = {
+    var photoView: UIImageView = {
         let img = UIImageView()
         img.layer.cornerRadius = 10
         img.contentMode = .scaleAspectFill
@@ -16,16 +16,32 @@ class SwipeablePhoto: UIView {
         return img
     }()
     
+    var userDetails: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .white
+        
+        return label
+    }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(photoView)
-        photoView.fillToSuperView()
+        setUpView()
         addPanGesture()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    fileprivate func setUpView() {
+        addSubview(photoView)
+        photoView.fillToSuperView()
+        addSubview(userDetails)
+        userDetails.anchor(top: nil, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 0))
+    }
+    
     
     //Pan gesture
     func addPanGesture() {
@@ -41,7 +57,6 @@ class SwipeablePhoto: UIView {
         switch gesture.state {
         case .changed:
             self.transform = CGAffineTransform(rotationAngle: degrees).translatedBy(x: translation.x, y: translation.y)
-            print(translation.x)
             
         case .ended:
             animateEnded(animatedby: Int(translation.x), gesture: gesture)
@@ -54,19 +69,20 @@ class SwipeablePhoto: UIView {
     func animateEnded(animatedby: Int, gesture: UIPanGestureRecognizer ) {
         let translationDirection: CGFloat = gesture.translation(in: nil).x > 0 ? 1 : -1
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut) {
-            if animatedby > 100 || animatedby < -100 {
+            if animatedby > 120 || animatedby < -120 {
                 self.center = CGPoint(x: 1000 * translationDirection, y: 0)
+                self.removeFromSuperview()
             }
             else {
                 self.transform = .identity
             }
             
         } completion: { (_) in
-            self.frame = CGRect(x: 0,
-                                y: 0,
-                                width: self.superview!.frame.width,
-                                height: self.superview!.frame.height)
-            self.transform = .identity
+//            self.frame = CGRect(x: 0,
+//                                y: 0,
+//                                width: self.superview!.frame.width,
+//                                height: self.superview!.frame.height)
+//            self.transform = .identity
             
         }
         
