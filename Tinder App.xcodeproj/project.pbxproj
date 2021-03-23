@@ -10,7 +10,7 @@
 		1F7B81392603319C0073A70E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B81382603319C0073A70E /* User.swift */; };
 		1F7B8142260344BE0073A70E /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B8141260344BE0073A70E /* CardViewModel.swift */; };
 		1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B8151260348820073A70E /* AdvertiserViewModels.swift */; };
-		1FAD71472601E35C006A33EE /* SwipeablePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD71462601E35C006A33EE /* SwipeablePhotoView.swift */; };
+		1FAD71472601E35C006A33EE /* SwipeablePhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */; };
 		1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A0260095F800E4D9C5 /* AppDelegate.swift */; };
 		1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */; };
 		1FC358A5260095F800E4D9C5 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A4260095F800E4D9C5 /* HomeController.swift */; };
@@ -44,7 +44,7 @@
 		1F7B81382603319C0073A70E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1F7B8141260344BE0073A70E /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		1F7B8151260348820073A70E /* AdvertiserViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiserViewModels.swift; sourceTree = "<group>"; };
-		1FAD71462601E35C006A33EE /* SwipeablePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePhotoView.swift; sourceTree = "<group>"; };
+		1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePhotoCardView.swift; sourceTree = "<group>"; };
 		1FC3589D260095F800E4D9C5 /* Tinder App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC358A0260095F800E4D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 				1F7B814C260347F30073A70E /* Controllers */,
 				1F7B813D260332050073A70E /* StackViews */,
 				1FC358A0260095F800E4D9C5 /* AppDelegate.swift */,
-				1FAD71462601E35C006A33EE /* SwipeablePhotoView.swift */,
+				1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */,
 				1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */,
 				1FC358D3260098EF00E4D9C5 /* Helper Files */,
 				1FC358AB260095F800E4D9C5 /* LaunchScreen.storyboard */,
@@ -316,7 +316,7 @@
 				1F7B8142260344BE0073A70E /* CardViewModel.swift in Sources */,
 				1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */,
 				1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */,
-				1FAD71472601E35C006A33EE /* SwipeablePhotoView.swift in Sources */,
+				1FAD71472601E35C006A33EE /* SwipeablePhotoCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,12 @@ import Foundation
 
 class HomeController: UIViewController {
     
-    var users = ([User(name: "Jane", age: 18, imageProfile: #imageLiteral(resourceName: "jane1"), profession: "Teacher"), User(name: "Kelly", age: 23, imageProfile: #imageLiteral(resourceName: "lady5c"), profession: "Muisc DJ"), AdvertiserViewModels(brandName: "", photoName: #imageLiteral(resourceName: "slide_out_menu_poster"))] as [ProducesCardViewModel]).map { (model) -> CardViewModel in
+    var users = ([User(name: "Jane", age: 18, imageProfiles: [#imageLiteral(resourceName: "jane1"), #imageLiteral(resourceName: "jane3"),#imageLiteral(resourceName: "jane2")], profession: "Teacher"), User(name: "Kelly", age: 23, imageProfiles: [#imageLiteral(resourceName: "lady5c"),#imageLiteral(resourceName: "kelly2"),#imageLiteral(resourceName: "kelly1")], profession: "Muisc DJ"), AdvertiserViewModels(brandName: "", imageAsset: [#imageLiteral(resourceName: "slide_out_menu_poster")])] as [ProducesCardViewModel]).map { (model) -> CardViewModel in
     model.convertToCardModel()
 }
     
     
-    let cardContainer = SwipeablePhotoView()
+    let cardContainer = SwipeablePhotoCardView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +26,10 @@ class HomeController: UIViewController {
     }
     
     fileprivate func setUpCardView() {
+        self.users = users.reversed()
         users.forEach { (user) in
-            let swipeableUser = SwipeablePhotoView()
-            swipeableUser.user = user
+            let swipeableUser = SwipeablePhotoCardView()
+            swipeableUser.cardObject = user
             cardContainer.addSubview(swipeableUser)
             swipeableUser.fillToSuperView()
 
