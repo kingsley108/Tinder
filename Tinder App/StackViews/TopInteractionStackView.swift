@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import Foundation
+
+protocol LogOutInteraction {
+    func logOutUser()
+}
 
 class TopInteractionStackView: UIStackView {
+    var delegate: LogOutInteraction?
     var profileButton: UIButton = {
         let btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "top_left_profile"), for: .normal)
         btn.contentMode = .scaleAspectFill
+        btn.addTarget(self, action: #selector(settingsAction), for: .touchUpInside)
         return btn
     }()
     
@@ -43,6 +50,10 @@ class TopInteractionStackView: UIStackView {
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc fileprivate func settingsAction() {
+        delegate?.logOutUser()
     }
     
     

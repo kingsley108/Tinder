@@ -38,10 +38,10 @@ class HomeController: UIViewController {
     }
     
     
-    
     fileprivate func setUpViews() {
   
         let topView = TopInteractionStackView()
+        topView.delegate = self
         
         let yellowView = HomeClassStackView()
         let stackView = UIStackView(arrangedSubviews: [topView,cardContainer,yellowView])
@@ -55,5 +55,14 @@ class HomeController: UIViewController {
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
         stackView.bringSubviewToFront(cardContainer)
     }
+}
 
+extension HomeController: LogOutInteraction {
+    func logOutUser() {
+        let registrationController = RegistrationController()
+        let navigationController = UINavigationController(rootViewController: registrationController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
+    }
+    
 }

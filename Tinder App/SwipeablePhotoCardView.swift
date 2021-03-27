@@ -72,8 +72,6 @@ class SwipeablePhotoCardView: UIView {
         tapBar.heightAnchor.constraint(equalToConstant: 4).isActive = true
         tapBar.spacing = 4
         tapBar.distribution = .fillEqually
-        
-        
     }
     
     func setGradientBackground() {
@@ -109,8 +107,6 @@ class SwipeablePhotoCardView: UIView {
         print(location.x)
         let didTapFoward = (Int(location.x) > 156) ? true : false
         didSkipFoward(for: didTapFoward)
-        
-        
     }
     
     func didSkipFoward(for didTapFoward: Bool) {
@@ -128,7 +124,6 @@ class SwipeablePhotoCardView: UIView {
     
     func skip(backwards forVal: Int) {
         cardObject?.skip(backwards: forVal)
-        
     }
     
     
@@ -167,8 +162,5 @@ class SwipeablePhotoCardView: UIView {
 //            self.transform = .identity
             
         }
-        
-        
-        
     }
 }

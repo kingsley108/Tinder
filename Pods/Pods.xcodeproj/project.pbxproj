@@ -1,0 +1,1036 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D0E64022587116EFE650B9C46BB3D84 /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC25186FBF96E3FF5400564DCED444C /* IQInvocation.swift */; };
+		0D8C73BEA1E00F0DE98B821E4DA02D68 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4766A2C389AE2D16E32019636BF99DE5 /* IQPreviousNextView.swift */; };
+		10D17AA967EDFD7BFBA4F187BDA6AE84 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17125F5603DFAC7B67E1A0498B82E2 /* IQKeyboardReturnKeyHandler.swift */; };
+		2D5852BCD18A3EAFE7DF313BA42AE329 /* Pods-Tinder App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C0EEA44249554D0E09D4A7783CDE6566 /* Pods-Tinder App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345042831B5ECFECC24740EFDC78CFD0 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01935827EF5B5C750E73FD3FB8429256 /* IQUIViewController+Additions.swift */; };
+		62A85277D0462C43B80A05E8822794BB /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D62684D908BA2959F34A51335202BE5 /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66E48CA40E1C2DFE3ADB5F70D521EC8B /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23535B8AECBE45A8EE85AF0804CF78E /* IQTitleBarButtonItem.swift */; };
+		682356FE7BD2E6033AE1D431DD86A2B6 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DB3DE4CB13CDA61B4E7848238980D /* IQToolbar.swift */; };
+		7EA7B2A293CBC761046BE642656EFC7C /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E46170AA1B30E07ACD4BDC5934F9F2 /* IQUIView+Hierarchy.swift */; };
+		810A768460B5D0BBD4D2069B62AEC37D /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C0F5440FAA1C029F8FA3148C1D420 /* IQKeyboardManager.swift */; };
+		8538FA6AC6038C448B3A84DEE016805F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8095171B206BFE6477A882BC3BD528C /* Foundation.framework */; };
+		93332D9C1EF9B957E0B1D147A9736BC7 /* Pods-Tinder AppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 19A7709BB8916B5D8B2DB213AB70DABB /* Pods-Tinder AppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95E470EF53242916C5927AEC882AE189 /* Pods-Tinder AppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A072834A2FC3317456073BA1CAB44451 /* Pods-Tinder AppTests-dummy.m */; };
+		9B3C1188B99CEEE5CC2C4F78F307EC18 /* Pods-Tinder AppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 88598C31C8C622FA493EA6EEB46E1E83 /* Pods-Tinder AppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1FCD84403350D6D0A09FB1D7F4612B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8095171B206BFE6477A882BC3BD528C /* Foundation.framework */; };
+		AB5B9EA39B1EEA3139408D508D17C626 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA6A6E1355409A77B99C81DF7EFF792 /* CoreGraphics.framework */; };
+		ABE10AE2B9EC841AE376FABB897929C0 /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A32A93437F376069DEA96D738E721C /* IQKeyboardManagerSwift-dummy.m */; };
+		B09B9BC312E1237685E029EF9CC6EB14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2DE640F9F4B4D5A0138E4FDEA74B6E4 /* UIKit.framework */; };
+		B4414030456DE58642F9AEE85890BC9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8095171B206BFE6477A882BC3BD528C /* Foundation.framework */; };
+		B60C9757B89ED86ADD8231DB93F63CE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8095171B206BFE6477A882BC3BD528C /* Foundation.framework */; };
+		C0B46390AD5146B4044C2D0F697A2A94 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0CD3337C8E603F9FEB396ADDD0BB5 /* IQUIView+IQKeyboardToolbar.swift */; };
+		C2BF5231ABAB1A07F76DD509F29536DB /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D82CD9E5FC4CD95F5AE18FA0B76F145 /* IQBarButtonItem.swift */; };
+		C67AE96FB74BC3C0B4F2B372A3A37F8B /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D047BF682A164CFE85C10493EE1EA7B3 /* IQUITextFieldView+Additions.swift */; };
+		D15795D2D356F20414DE262400546989 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62E80D0F47B78A48E611F2D292C8652 /* IQKeyboardManagerConstants.swift */; };
+		D4A94BD24ED95A0526584C929D510F4E /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED71B104195C66B506F0E51DBF7FD99 /* IQNSArray+Sort.swift */; };
+		D65A2F0372DC3FBD78A665DE3383D950 /* Pods-Tinder App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC954CCDFC79FE39EA7937E22E0847BE /* Pods-Tinder App-dummy.m */; };
+		E2F2D56539AC14D8AA2B0F63E94A4A00 /* Pods-Tinder AppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1716E8C40371D1704B947D01078AEAF /* Pods-Tinder AppUITests-dummy.m */; };
+		ED6672ADD1398FED7A3C3F35A5B2EB96 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A2DB7BA8B979FB68C3EBB8AE8A43E6 /* IQKeyboardManagerConstantsInternal.swift */; };
+		F23CEE068F2A26E0028F90AB3AA90462 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350695FC6FDFBFA678ED5E65431DC2E0 /* QuartzCore.framework */; };
+		F97B7FA081546182D092F924853EE916 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F9401264983921D6F3F65BC0294A8B /* IQTextView.swift */; };
+		FED607E6F36A7E08786D6BEACB4D8508 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A887A78742A87EC7167F3FF0B752F49C /* IQUIScrollView+Additions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17B904385C67CD986EC812AAD35CD446 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0A02CF41BEF2C546F9461461CEB3EBD;
+			remoteInfo = "Pods-Tinder App";
+		};
+		983353B6644B5E1F634EF694AAA53B3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0A02CF41BEF2C546F9461461CEB3EBD;
+			remoteInfo = "Pods-Tinder App";
+		};
+		BFF3E6143D0C53D853386A8DDB67F913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A7F5E2FCAF043CD88C6BA80B702F8EA;
+			remoteInfo = IQKeyboardManagerSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01935827EF5B5C750E73FD3FB8429256 /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
+		0AC25186FBF96E3FF5400564DCED444C /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
+		0D82CD9E5FC4CD95F5AE18FA0B76F145 /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
+		0EB6B1A929B5DE7F533BF5F2A5812567 /* Pods-Tinder App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tinder App-frameworks.sh"; sourceTree = "<group>"; };
+		19A7709BB8916B5D8B2DB213AB70DABB /* Pods-Tinder AppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tinder AppUITests-umbrella.h"; sourceTree = "<group>"; };
+		1C80666B51FB49D4EABE08967213518A /* Pods-Tinder AppUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tinder AppUITests-Info.plist"; sourceTree = "<group>"; };
+		2043F1747A4E9D5C5E8F24ABC0B7585E /* Pods-Tinder App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tinder App.debug.xcconfig"; sourceTree = "<group>"; };
+		22F9401264983921D6F3F65BC0294A8B /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
+		2AECCCDFA4405000D03BB8F4002F16FE /* Pods-Tinder AppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tinder AppTests-Info.plist"; sourceTree = "<group>"; };
+		2C17125F5603DFAC7B67E1A0498B82E2 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
+		2C9CCB97FB975537A073265A97EC49AC /* Pods-Tinder AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tinder AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2DD15A43BCDEC9EA8B7D1042BCE43601 /* Pods-Tinder App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tinder App.release.xcconfig"; sourceTree = "<group>"; };
+		350695FC6FDFBFA678ED5E65431DC2E0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		3B968E6B9285D9966449BF9019316373 /* Pods-Tinder AppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tinder AppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4766A2C389AE2D16E32019636BF99DE5 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
+		4ED71B104195C66B506F0E51DBF7FD99 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
+		53A2DB7BA8B979FB68C3EBB8AE8A43E6 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
+		55970526511AE6E5D1920FF0427B915C /* Pods-Tinder App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tinder App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		60BFB04D3CF917699EF3432F431389E3 /* Pods_Tinder_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tinder_App.framework; path = "Pods-Tinder App.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		654AC1F2F44140E12C2147D87ADA6193 /* Pods-Tinder App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tinder App-Info.plist"; sourceTree = "<group>"; };
+		66CAD5804A3B99E1B732840F6A5E19D5 /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
+		67E46170AA1B30E07ACD4BDC5934F9F2 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
+		6879653FAD03F470CDF4D94811BC9722 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7881278A7AF5CA4BD8D6AFF0BF4449CA /* Pods-Tinder AppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tinder AppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		831813E06255EA72FD29178BEE34F30A /* IQKeyboardManagerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IQKeyboardManagerSwift-Info.plist"; sourceTree = "<group>"; };
+		87AB51B03D64E3E9ECD142CE5C9A4ECF /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
+		88598C31C8C622FA493EA6EEB46E1E83 /* Pods-Tinder AppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tinder AppTests-umbrella.h"; sourceTree = "<group>"; };
+		8D62684D908BA2959F34A51335202BE5 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
+		8E3C0F5440FAA1C029F8FA3148C1D420 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
+		92804F1B427D18869F1B325BE56B1B92 /* Pods-Tinder AppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tinder AppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93D836FC4608C01A2AD6941430AD8CDA /* Pods-Tinder AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tinder AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		93EA9A599D944FE20C00EBC1ACEFBF19 /* Pods-Tinder App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Tinder App.modulemap"; sourceTree = "<group>"; };
+		9B12A5222C8DAE4F6038ACE35B612B94 /* Pods_Tinder_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tinder_AppTests.framework; path = "Pods-Tinder AppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A072834A2FC3317456073BA1CAB44451 /* Pods-Tinder AppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tinder AppTests-dummy.m"; sourceTree = "<group>"; };
+		A1716E8C40371D1704B947D01078AEAF /* Pods-Tinder AppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tinder AppUITests-dummy.m"; sourceTree = "<group>"; };
+		A62E80D0F47B78A48E611F2D292C8652 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
+		A887A78742A87EC7167F3FF0B752F49C /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
+		A89FFF8CA9236A836289100C09EEC2B6 /* Pods-Tinder AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tinder AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		ABA6A6E1355409A77B99C81DF7EFF792 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		BBA0CD3337C8E603F9FEB396ADDD0BB5 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
+		BC954CCDFC79FE39EA7937E22E0847BE /* Pods-Tinder App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tinder App-dummy.m"; sourceTree = "<group>"; };
+		C0EEA44249554D0E09D4A7783CDE6566 /* Pods-Tinder App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tinder App-umbrella.h"; sourceTree = "<group>"; };
+		C8095171B206BFE6477A882BC3BD528C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D047BF682A164CFE85C10493EE1EA7B3 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
+		D7A32A93437F376069DEA96D738E721C /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
+		DA2936ECEAC53F93FABC4B384E1E41D8 /* Pods-Tinder App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tinder App-acknowledgements.plist"; sourceTree = "<group>"; };
+		DD06974D2570032EBD955211A4738E03 /* IQKeyboardManagerSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.xcconfig; sourceTree = "<group>"; };
+		E23535B8AECBE45A8EE85AF0804CF78E /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
+		E9E6866A61B64EF07BF019D39787E0BD /* Pods_Tinder_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tinder_AppUITests.framework; path = "Pods-Tinder AppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA60903F1C035950DB1D390351F75641 /* Pods-Tinder AppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tinder AppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F2DE640F9F4B4D5A0138E4FDEA74B6E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F4992271599272D928188FFCE7BF24DE /* Pods-Tinder AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tinder AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F49935B9BFC4EF2796DBD11EF05D4DBF /* Pods-Tinder AppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Tinder AppTests.modulemap"; sourceTree = "<group>"; };
+		FE48077CA46E216F1F74F8A5F29B2A61 /* Pods-Tinder AppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Tinder AppUITests.modulemap"; sourceTree = "<group>"; };
+		FE4DB3DE4CB13CDA61B4E7848238980D /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2035391D15E6BB03ED580A2FA7947EFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8538FA6AC6038C448B3A84DEE016805F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31EEE1730BA33DC7E1582564BA02D4EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4414030456DE58642F9AEE85890BC9F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		547153DB85CC0661BD5D6D0B1033EF0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B60C9757B89ED86ADD8231DB93F63CE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4552675614485895B8058878DE4EA10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB5B9EA39B1EEA3139408D508D17C626 /* CoreGraphics.framework in Frameworks */,
+				A1FCD84403350D6D0A09FB1D7F4612B3 /* Foundation.framework in Frameworks */,
+				F23CEE068F2A26E0028F90AB3AA90462 /* QuartzCore.framework in Frameworks */,
+				B09B9BC312E1237685E029EF9CC6EB14 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DD918864009161BB6033AB93346A412 /* IQKeyboardManagerSwift */ = {
+			isa = PBXGroup;
+			children = (
+				0D82CD9E5FC4CD95F5AE18FA0B76F145 /* IQBarButtonItem.swift */,
+				0AC25186FBF96E3FF5400564DCED444C /* IQInvocation.swift */,
+				8E3C0F5440FAA1C029F8FA3148C1D420 /* IQKeyboardManager.swift */,
+				A62E80D0F47B78A48E611F2D292C8652 /* IQKeyboardManagerConstants.swift */,
+				53A2DB7BA8B979FB68C3EBB8AE8A43E6 /* IQKeyboardManagerConstantsInternal.swift */,
+				2C17125F5603DFAC7B67E1A0498B82E2 /* IQKeyboardReturnKeyHandler.swift */,
+				4ED71B104195C66B506F0E51DBF7FD99 /* IQNSArray+Sort.swift */,
+				4766A2C389AE2D16E32019636BF99DE5 /* IQPreviousNextView.swift */,
+				22F9401264983921D6F3F65BC0294A8B /* IQTextView.swift */,
+				E23535B8AECBE45A8EE85AF0804CF78E /* IQTitleBarButtonItem.swift */,
+				FE4DB3DE4CB13CDA61B4E7848238980D /* IQToolbar.swift */,
+				A887A78742A87EC7167F3FF0B752F49C /* IQUIScrollView+Additions.swift */,
+				D047BF682A164CFE85C10493EE1EA7B3 /* IQUITextFieldView+Additions.swift */,
+				67E46170AA1B30E07ACD4BDC5934F9F2 /* IQUIView+Hierarchy.swift */,
+				BBA0CD3337C8E603F9FEB396ADDD0BB5 /* IQUIView+IQKeyboardToolbar.swift */,
+				01935827EF5B5C750E73FD3FB8429256 /* IQUIViewController+Additions.swift */,
+				A16273F4A0A05752C355BE1AF4931A0A /* Support Files */,
+			);
+			name = IQKeyboardManagerSwift;
+			path = IQKeyboardManagerSwift;
+			sourceTree = "<group>";
+		};
+		5B106CA87CF664EE7345965ED325E239 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6879653FAD03F470CDF4D94811BC9722 /* IQKeyboardManagerSwift.framework */,
+				60BFB04D3CF917699EF3432F431389E3 /* Pods_Tinder_App.framework */,
+				9B12A5222C8DAE4F6038ACE35B612B94 /* Pods_Tinder_AppTests.framework */,
+				E9E6866A61B64EF07BF019D39787E0BD /* Pods_Tinder_AppUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91FFF2A8779FB98CA3FAE85F42E8DEA1 /* Pods-Tinder AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				F49935B9BFC4EF2796DBD11EF05D4DBF /* Pods-Tinder AppTests.modulemap */,
+				3B968E6B9285D9966449BF9019316373 /* Pods-Tinder AppTests-acknowledgements.markdown */,
+				EA60903F1C035950DB1D390351F75641 /* Pods-Tinder AppTests-acknowledgements.plist */,
+				A072834A2FC3317456073BA1CAB44451 /* Pods-Tinder AppTests-dummy.m */,
+				2AECCCDFA4405000D03BB8F4002F16FE /* Pods-Tinder AppTests-Info.plist */,
+				88598C31C8C622FA493EA6EEB46E1E83 /* Pods-Tinder AppTests-umbrella.h */,
+				93D836FC4608C01A2AD6941430AD8CDA /* Pods-Tinder AppTests.debug.xcconfig */,
+				A89FFF8CA9236A836289100C09EEC2B6 /* Pods-Tinder AppTests.release.xcconfig */,
+			);
+			name = "Pods-Tinder AppTests";
+			path = "Target Support Files/Pods-Tinder AppTests";
+			sourceTree = "<group>";
+		};
+		A16273F4A0A05752C355BE1AF4931A0A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				66CAD5804A3B99E1B732840F6A5E19D5 /* IQKeyboardManagerSwift.modulemap */,
+				DD06974D2570032EBD955211A4738E03 /* IQKeyboardManagerSwift.xcconfig */,
+				D7A32A93437F376069DEA96D738E721C /* IQKeyboardManagerSwift-dummy.m */,
+				831813E06255EA72FD29178BEE34F30A /* IQKeyboardManagerSwift-Info.plist */,
+				87AB51B03D64E3E9ECD142CE5C9A4ECF /* IQKeyboardManagerSwift-prefix.pch */,
+				8D62684D908BA2959F34A51335202BE5 /* IQKeyboardManagerSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/IQKeyboardManagerSwift";
+			sourceTree = "<group>";
+		};
+		AB420AE6ADB30E991C1C7F80C41D2753 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6442EDDD62FF46C32CBA24662625985 /* Pods-Tinder App */,
+				91FFF2A8779FB98CA3FAE85F42E8DEA1 /* Pods-Tinder AppTests */,
+				EB469C8CE3F04EC44A1CF0FB9125E36E /* Pods-Tinder AppUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B76BA78A99D5BD517391A6B9597BCBC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DD918864009161BB6033AB93346A412 /* IQKeyboardManagerSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8B34539FD8913A216F0CB592F859A01 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
+				B76BA78A99D5BD517391A6B9597BCBC5 /* Pods */,
+				5B106CA87CF664EE7345965ED325E239 /* Products */,
+				AB420AE6ADB30E991C1C7F80C41D2753 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		EB469C8CE3F04EC44A1CF0FB9125E36E /* Pods-Tinder AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FE48077CA46E216F1F74F8A5F29B2A61 /* Pods-Tinder AppUITests.modulemap */,
+				92804F1B427D18869F1B325BE56B1B92 /* Pods-Tinder AppUITests-acknowledgements.markdown */,
+				7881278A7AF5CA4BD8D6AFF0BF4449CA /* Pods-Tinder AppUITests-acknowledgements.plist */,
+				A1716E8C40371D1704B947D01078AEAF /* Pods-Tinder AppUITests-dummy.m */,
+				1C80666B51FB49D4EABE08967213518A /* Pods-Tinder AppUITests-Info.plist */,
+				19A7709BB8916B5D8B2DB213AB70DABB /* Pods-Tinder AppUITests-umbrella.h */,
+				2C9CCB97FB975537A073265A97EC49AC /* Pods-Tinder AppUITests.debug.xcconfig */,
+				F4992271599272D928188FFCE7BF24DE /* Pods-Tinder AppUITests.release.xcconfig */,
+			);
+			name = "Pods-Tinder AppUITests";
+			path = "Target Support Files/Pods-Tinder AppUITests";
+			sourceTree = "<group>";
+		};
+		F6442EDDD62FF46C32CBA24662625985 /* Pods-Tinder App */ = {
+			isa = PBXGroup;
+			children = (
+				93EA9A599D944FE20C00EBC1ACEFBF19 /* Pods-Tinder App.modulemap */,
+				55970526511AE6E5D1920FF0427B915C /* Pods-Tinder App-acknowledgements.markdown */,
+				DA2936ECEAC53F93FABC4B384E1E41D8 /* Pods-Tinder App-acknowledgements.plist */,
+				BC954CCDFC79FE39EA7937E22E0847BE /* Pods-Tinder App-dummy.m */,
+				0EB6B1A929B5DE7F533BF5F2A5812567 /* Pods-Tinder App-frameworks.sh */,
+				654AC1F2F44140E12C2147D87ADA6193 /* Pods-Tinder App-Info.plist */,
+				C0EEA44249554D0E09D4A7783CDE6566 /* Pods-Tinder App-umbrella.h */,
+				2043F1747A4E9D5C5E8F24ABC0B7585E /* Pods-Tinder App.debug.xcconfig */,
+				2DD15A43BCDEC9EA8B7D1042BCE43601 /* Pods-Tinder App.release.xcconfig */,
+			);
+			name = "Pods-Tinder App";
+			path = "Target Support Files/Pods-Tinder App";
+			sourceTree = "<group>";
+		};
+		F8B34539FD8913A216F0CB592F859A01 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				ABA6A6E1355409A77B99C81DF7EFF792 /* CoreGraphics.framework */,
+				C8095171B206BFE6477A882BC3BD528C /* Foundation.framework */,
+				350695FC6FDFBFA678ED5E65431DC2E0 /* QuartzCore.framework */,
+				F2DE640F9F4B4D5A0138E4FDEA74B6E4 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		31CB13111AD2A56911698144C959CF82 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B3C1188B99CEEE5CC2C4F78F307EC18 /* Pods-Tinder AppTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E528717093A3AC195D8CBCC8617C78D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93332D9C1EF9B957E0B1D147A9736BC7 /* Pods-Tinder AppUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A506D1CDE467E8C3E45F49A51F2EFA96 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D5852BCD18A3EAFE7DF313BA42AE329 /* Pods-Tinder App-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A6429FF0F9608A16E4D96813E85F23 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62A85277D0462C43B80A05E8822794BB /* IQKeyboardManagerSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2A7F5E2FCAF043CD88C6BA80B702F8EA /* IQKeyboardManagerSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7155AE59A19533F60ECE3B4045B01F0 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */;
+			buildPhases = (
+				F4A6429FF0F9608A16E4D96813E85F23 /* Headers */,
+				5FE832EBE64D69386D4BED076EF0ADB8 /* Sources */,
+				D4552675614485895B8058878DE4EA10 /* Frameworks */,
+				FAA5DA81F8292820D65F403E941074FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IQKeyboardManagerSwift;
+			productName = IQKeyboardManagerSwift;
+			productReference = 6879653FAD03F470CDF4D94811BC9722 /* IQKeyboardManagerSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A0A02CF41BEF2C546F9461461CEB3EBD /* Pods-Tinder App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4014DB45A1972AE3954690173F7C393 /* Build configuration list for PBXNativeTarget "Pods-Tinder App" */;
+			buildPhases = (
+				A506D1CDE467E8C3E45F49A51F2EFA96 /* Headers */,
+				E82E5A5065859FDEFAFFA0BD9A658015 /* Sources */,
+				31EEE1730BA33DC7E1582564BA02D4EC /* Frameworks */,
+				EFE745B47F5F236E42F55A37042C10EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06BE83F142021F863502317D2D54141A /* PBXTargetDependency */,
+			);
+			name = "Pods-Tinder App";
+			productName = "Pods-Tinder App";
+			productReference = 60BFB04D3CF917699EF3432F431389E3 /* Pods_Tinder_App.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CEB7404073237DAEFC33F7C75F862EB0 /* Pods-Tinder AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDDFF6AEA78AA40E60C64D8D707F4283 /* Build configuration list for PBXNativeTarget "Pods-Tinder AppTests" */;
+			buildPhases = (
+				31CB13111AD2A56911698144C959CF82 /* Headers */,
+				3EC7E18E36DE4AF99D454C449BCA1248 /* Sources */,
+				547153DB85CC0661BD5D6D0B1033EF0A /* Frameworks */,
+				A003F6872C5192D36222531A420552EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C713DD4150E7D9B696544FF3F9E4BFE /* PBXTargetDependency */,
+			);
+			name = "Pods-Tinder AppTests";
+			productName = "Pods-Tinder AppTests";
+			productReference = 9B12A5222C8DAE4F6038ACE35B612B94 /* Pods_Tinder_AppTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FAD3A0495D4399BAAB4486695234A080 /* Pods-Tinder AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81CE7B24052605A75CEF986305C6C1D5 /* Build configuration list for PBXNativeTarget "Pods-Tinder AppUITests" */;
+			buildPhases = (
+				6E528717093A3AC195D8CBCC8617C78D /* Headers */,
+				F5FBB8A2A5B384B2D31CF766F2CA78AB /* Sources */,
+				2035391D15E6BB03ED580A2FA7947EFF /* Frameworks */,
+				55B2193681C23583EA542DB11CFB7484 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B224404172397DE9D70D9A7F18D7B7F3 /* PBXTargetDependency */,
+			);
+			name = "Pods-Tinder AppUITests";
+			productName = "Pods-Tinder AppUITests";
+			productReference = E9E6866A61B64EF07BF019D39787E0BD /* Pods_Tinder_AppUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 5B106CA87CF664EE7345965ED325E239 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A7F5E2FCAF043CD88C6BA80B702F8EA /* IQKeyboardManagerSwift */,
+				A0A02CF41BEF2C546F9461461CEB3EBD /* Pods-Tinder App */,
+				CEB7404073237DAEFC33F7C75F862EB0 /* Pods-Tinder AppTests */,
+				FAD3A0495D4399BAAB4486695234A080 /* Pods-Tinder AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55B2193681C23583EA542DB11CFB7484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A003F6872C5192D36222531A420552EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFE745B47F5F236E42F55A37042C10EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAA5DA81F8292820D65F403E941074FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EC7E18E36DE4AF99D454C449BCA1248 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E470EF53242916C5927AEC882AE189 /* Pods-Tinder AppTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FE832EBE64D69386D4BED076EF0ADB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2BF5231ABAB1A07F76DD509F29536DB /* IQBarButtonItem.swift in Sources */,
+				0D0E64022587116EFE650B9C46BB3D84 /* IQInvocation.swift in Sources */,
+				810A768460B5D0BBD4D2069B62AEC37D /* IQKeyboardManager.swift in Sources */,
+				D15795D2D356F20414DE262400546989 /* IQKeyboardManagerConstants.swift in Sources */,
+				ED6672ADD1398FED7A3C3F35A5B2EB96 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				ABE10AE2B9EC841AE376FABB897929C0 /* IQKeyboardManagerSwift-dummy.m in Sources */,
+				10D17AA967EDFD7BFBA4F187BDA6AE84 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				D4A94BD24ED95A0526584C929D510F4E /* IQNSArray+Sort.swift in Sources */,
+				0D8C73BEA1E00F0DE98B821E4DA02D68 /* IQPreviousNextView.swift in Sources */,
+				F97B7FA081546182D092F924853EE916 /* IQTextView.swift in Sources */,
+				66E48CA40E1C2DFE3ADB5F70D521EC8B /* IQTitleBarButtonItem.swift in Sources */,
+				682356FE7BD2E6033AE1D431DD86A2B6 /* IQToolbar.swift in Sources */,
+				FED607E6F36A7E08786D6BEACB4D8508 /* IQUIScrollView+Additions.swift in Sources */,
+				C67AE96FB74BC3C0B4F2B372A3A37F8B /* IQUITextFieldView+Additions.swift in Sources */,
+				7EA7B2A293CBC761046BE642656EFC7C /* IQUIView+Hierarchy.swift in Sources */,
+				C0B46390AD5146B4044C2D0F697A2A94 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				345042831B5ECFECC24740EFDC78CFD0 /* IQUIViewController+Additions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E82E5A5065859FDEFAFFA0BD9A658015 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D65A2F0372DC3FBD78A665DE3383D950 /* Pods-Tinder App-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5FBB8A2A5B384B2D31CF766F2CA78AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2F2D56539AC14D8AA2B0F63E94A4A00 /* Pods-Tinder AppUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06BE83F142021F863502317D2D54141A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = 2A7F5E2FCAF043CD88C6BA80B702F8EA /* IQKeyboardManagerSwift */;
+			targetProxy = BFF3E6143D0C53D853386A8DDB67F913 /* PBXContainerItemProxy */;
+		};
+		5C713DD4150E7D9B696544FF3F9E4BFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Tinder App";
+			target = A0A02CF41BEF2C546F9461461CEB3EBD /* Pods-Tinder App */;
+			targetProxy = 983353B6644B5E1F634EF694AAA53B3B /* PBXContainerItemProxy */;
+		};
+		B224404172397DE9D70D9A7F18D7B7F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Tinder App";
+			target = A0A02CF41BEF2C546F9461461CEB3EBD /* Pods-Tinder App */;
+			targetProxy = 17B904385C67CD986EC812AAD35CD446 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AD59F7D5CCB71CF1FADE8F6583E74AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DD15A43BCDEC9EA8B7D1042BCE43601 /* Pods-Tinder App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tinder App/Pods-Tinder App-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tinder App/Pods-Tinder App.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2327117F762218558E2EAE5E04AB3492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2043F1747A4E9D5C5E8F24ABC0B7585E /* Pods-Tinder App.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tinder App/Pods-Tinder App-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tinder App/Pods-Tinder App.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		243450EC48C838F96B4801A1DFA2BC6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4992271599272D928188FFCE7BF24DE /* Pods-Tinder AppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tinder AppUITests/Pods-Tinder AppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tinder AppUITests/Pods-Tinder AppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5193289E9F97EAA115B974045F4118CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD06974D2570032EBD955211A4738E03 /* IQKeyboardManagerSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
+				PRODUCT_MODULE_NAME = IQKeyboardManagerSwift;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9283CD4A38F2415750B4F98751FC1182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C9CCB97FB975537A073265A97EC49AC /* Pods-Tinder AppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tinder AppUITests/Pods-Tinder AppUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tinder AppUITests/Pods-Tinder AppUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AAE100FF8C9C4FA388CD2C3365F9B449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		BA6D936928BCB45205F7DCAAD189E43A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A89FFF8CA9236A836289100C09EEC2B6 /* Pods-Tinder AppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tinder AppTests/Pods-Tinder AppTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tinder AppTests/Pods-Tinder AppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CD8CB305E63C6AF3AB1704D7C52B66AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD06974D2570032EBD955211A4738E03 /* IQKeyboardManagerSwift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
+				PRODUCT_MODULE_NAME = IQKeyboardManagerSwift;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED43BE72C917497AF8FA2BF1D6D0A382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93D836FC4608C01A2AD6941430AD8CDA /* Pods-Tinder AppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tinder AppTests/Pods-Tinder AppTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tinder AppTests/Pods-Tinder AppTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F0D3E8BE5BBDC05E33D6B4B1E8562585 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAE100FF8C9C4FA388CD2C3365F9B449 /* Debug */,
+				F0D3E8BE5BBDC05E33D6B4B1E8562585 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81CE7B24052605A75CEF986305C6C1D5 /* Build configuration list for PBXNativeTarget "Pods-Tinder AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9283CD4A38F2415750B4F98751FC1182 /* Debug */,
+				243450EC48C838F96B4801A1DFA2BC6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4014DB45A1972AE3954690173F7C393 /* Build configuration list for PBXNativeTarget "Pods-Tinder App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2327117F762218558E2EAE5E04AB3492 /* Debug */,
+				0AD59F7D5CCB71CF1FADE8F6583E74AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7155AE59A19533F60ECE3B4045B01F0 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD8CB305E63C6AF3AB1704D7C52B66AC /* Debug */,
+				5193289E9F97EAA115B974045F4118CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDDFF6AEA78AA40E60C64D8D707F4283 /* Build configuration list for PBXNativeTarget "Pods-Tinder AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED43BE72C917497AF8FA2BF1D6D0A382 /* Debug */,
+				BA6D936928BCB45205F7DCAAD189E43A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
