@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0A02CF41BEF2C546F9461461CEB3EBD"
+               BlueprintIdentifier = "457D76BD36BD6226283FEE22F32325F4"
                BuildableName = "Pods_Tinder_App.framework"
                BlueprintName = "Pods-Tinder App"
                ReferencedContainer = "container:Pods.xcodeproj">

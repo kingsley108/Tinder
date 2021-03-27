@@ -7,6 +7,12 @@ target 'Tinder App' do
 
   # Pods for Tinder App
   pod 'IQKeyboardManagerSwift'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'JGProgressHUD'
 
   target 'Tinder AppTests' do
     inherit! :search_paths

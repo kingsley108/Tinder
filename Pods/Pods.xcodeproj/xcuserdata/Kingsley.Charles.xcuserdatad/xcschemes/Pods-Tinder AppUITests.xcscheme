@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FAD3A0495D4399BAAB4486695234A080"
+               BlueprintIdentifier = "AD394651534C155412DBB611758E443C"
                BuildableName = "Pods_Tinder_AppUITests.framework"
                BlueprintName = "Pods-Tinder AppUITests"
                ReferencedContainer = "container:Pods.xcodeproj">

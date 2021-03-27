@@ -7,8 +7,18 @@
 
 import UIKit
 import Foundation
+import Firebase
+import JGProgressHUD
 
 class RegistrationController: UIViewController {
+    
+    let hud: JGProgressHUD = {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Registering"
+        hud.shadow = JGProgressHUDShadow(color: .black, offset: .zero, radius: 5.0, opacity: 0.1)
+        return hud
+    }()
+    
     let registrationModel = RegistrationViewModel()
     var gradient : CAGradientLayer = {
         let gradient = CAGradientLayer()
@@ -63,6 +73,7 @@ class RegistrationController: UIViewController {
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .black)
         btn.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        btn.addTarget(self, action: #selector(didRegister), for: .touchUpInside)
         return btn
     }()
     
@@ -74,6 +85,22 @@ class RegistrationController: UIViewController {
         setUpView()
         keyboardDismissGesture()
         handleKeyBoardObserver()
+    }
+    
+    @objc fileprivate func didRegister() {
+        hud.show(in: self.view)
+        guard let email = emailTextField.text , let password = passwordTextField.text else {return}
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            
+            if let error = error {
+                self.hud.textLabel.text = "Failed Registration"
+                self.hud.detailTextLabel.text = error.localizedDescription
+                self.hud.dismiss(afterDelay: 3, animated: true)
+                return
+            }
+            self.hud.dismiss()
+            self.view.endEditing(true)
+        }
     }
     
     fileprivate func handleKeyBoardObserver() {
