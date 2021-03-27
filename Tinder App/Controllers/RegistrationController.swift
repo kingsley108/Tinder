@@ -13,6 +13,7 @@ import RxSwift
 import RxCocoa
 
 class RegistrationController: UIViewController {
+    let registrationModel = RegistrationViewModel()
     let imageContainer = PublishSubject<UIImage>()
     let disposeBag = DisposeBag()
     let hud: JGProgressHUD = {
@@ -22,7 +23,6 @@ class RegistrationController: UIViewController {
         return hud
     }()
     
-    let registrationModel = RegistrationViewModel()
     var gradient : CAGradientLayer = {
         let gradient = CAGradientLayer()
         gradient.colors = [#colorLiteral(red: 1, green: 0.4529054165, blue: 0.4463197589, alpha: 1).cgColor,#colorLiteral(red: 0.92856282, green: 0.1666355133, blue: 0.5210859776, alpha: 1).cgColor]
@@ -111,29 +111,30 @@ class RegistrationController: UIViewController {
     }
     
     fileprivate func handleKeyBoardObserver() {
-        registrationModel.observer = { [weak self] isCompleted in
-            if isCompleted == true {
+        registrationModel.imageSubsciber()
+        _ = registrationModel.correctEntry.subscribe(onNext: { [weak self] authorised in
+            if authorised == true {
                 self?.registerButton.backgroundColor = #colorLiteral(red: 0.8081405759, green: 0.1042295471, blue: 0.3269608021, alpha: 1)
                 self?.registerButton.isEnabled = true
             } else {
                 self?.registerButton.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
                 self?.registerButton.isEnabled = true
             }
-        }
+        })
+            
         
-        _ = imageObserver.subscribe { [weak self] profileImage in
+        _ = registrationModel.imageObserver.subscribe { [weak self] profileImage in
             self?.userProfileButton.setImage(profileImage, for: .normal)
         }.disposed(by: disposeBag)
-
     }
     
     @objc fileprivate func handleTextChanged(textfield: UserDetailsField) {
-        print(textfield)
         if textfield == passwordTextField {
             registrationModel.passwordField = textfield
         }
         if textfield == usernameTextField {
             registrationModel.usernameField = textfield
+            
         }
         if textfield == emailTextField {
             registrationModel.emailTextField = textfield

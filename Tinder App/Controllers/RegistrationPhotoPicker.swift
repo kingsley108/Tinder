@@ -12,10 +12,6 @@ import RxCocoa
 
 extension RegistrationController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
-    var imageObserver : Observable<UIImage> {
-        return imageContainer.asObservable()
-    }
-    
     @objc func getPhotoAsset() {
              let imagePickerController = UIImagePickerController()
             imagePickerController.allowsEditing = false
@@ -28,7 +24,7 @@ extension RegistrationController: UIImagePickerControllerDelegate & UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let tempImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         imageContainer.onNext(tempImage)
-        
+        registrationModel.imageContainer.onNext(tempImage)
         self.dismiss(animated: true, completion: nil)
     }
     

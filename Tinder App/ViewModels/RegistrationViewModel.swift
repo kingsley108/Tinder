@@ -6,34 +6,50 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
 class RegistrationViewModel {
+    var profileImage: UIImage? = nil
+    let isCorrectlyFilled = PublishSubject<Bool>()
+    let imageContainer = PublishSubject<UIImage>()
+    var imageObserver: Observable<UIImage> {
+        return imageContainer.asObservable()
+    }
+    var correctEntry: Observable<Bool> {
+        return isCorrectlyFilled.asObservable()
+    }
     
-    var emailTextField: UserDetailsField?  {
-        didSet{
-            handleKeyboardInput()
+        var emailTextField: UserDetailsField?  {
+            didSet{
+                handleKeyboardInput()
+            }
+        }
+    
+        var passwordField: UserDetailsField? {
+            didSet{
+                handleKeyboardInput()
+            }
+        }
+    
+        var usernameField: UserDetailsField? {
+            didSet{
+                handleKeyboardInput()
+            }
+        }
+    func imageSubsciber() {
+        _ = imageObserver.subscribe { [weak self] image in
+            self?.profileImage = image.element
+            self?.handleKeyboardInput()
         }
     }
     
-    var passwordField: UserDetailsField? {
-        didSet{
-            handleKeyboardInput()
-        }
-    }
     
-    var usernameField: UserDetailsField? {
-        didSet{
-            handleKeyboardInput()
-        }
-    }
-    
-    var observer: ((Bool) -> ())?
-    
-    fileprivate func handleKeyboardInput() {
-        if usernameField?.text?.isEmpty ?? true || passwordField?.text?.isEmpty ?? true || emailTextField?.text?.isEmpty ?? true {
-            self.observer?(false)
-        }
-        else {
-            self.observer?(true)
-        }
+     func handleKeyboardInput() {
+        let isEmpty = (emailTextField?.text?.isEmpty ?? true || passwordField?.text?.isEmpty ?? true || usernameField?.text?.isEmpty ?? true || profileImage == nil)
+        let isCompleted = !isEmpty
+        
+            _ = isCompleted ? isCorrectlyFilled.onNext(true) : isCorrectlyFilled.onNext(false)
     }
 }
+
