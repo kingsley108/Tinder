@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,11 @@
 		1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B8151260348820073A70E /* AdvertiserViewModels.swift */; };
 		1F7F90B1260E73CD00E2580D /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7F90B0260E73CD00E2580D /* RegistrationController.swift */; };
 		1F7F90BC260E754D00E2580D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F90BB260E754D00E2580D /* Assets.xcassets */; };
-		1F92D085260F19F8006F3805 /* userDetailsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D084260F19F8006F3805 /* userDetailsField.swift */; };
+		1F92D085260F19F8006F3805 /* UserDetailsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D084260F19F8006F3805 /* UserDetailsField.swift */; };
 		1F92D097260F2D82006F3805 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */; };
 		1F92D0A2260F3607006F3805 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F92D0A1260F3607006F3805 /* GoogleService-Info.plist */; };
+		1F92D0D4260F429B006F3805 /* RegistrationPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D0D3260F429B006F3805 /* RegistrationPhotoPicker.swift */; };
+		1F92D0E0260F46A5006F3805 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D0DF260F46A5006F3805 /* Bindable.swift */; };
 		1FAD71472601E35C006A33EE /* SwipeablePhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */; };
 		1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A0260095F800E4D9C5 /* AppDelegate.swift */; };
 		1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */; };
@@ -54,9 +56,11 @@
 		1F7B8151260348820073A70E /* AdvertiserViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiserViewModels.swift; sourceTree = "<group>"; };
 		1F7F90B0260E73CD00E2580D /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		1F7F90BB260E754D00E2580D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1F92D084260F19F8006F3805 /* userDetailsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDetailsField.swift; sourceTree = "<group>"; };
+		1F92D084260F19F8006F3805 /* UserDetailsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsField.swift; sourceTree = "<group>"; };
 		1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		1F92D0A1260F3607006F3805 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		1F92D0D3260F429B006F3805 /* RegistrationPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhotoPicker.swift; sourceTree = "<group>"; };
+		1F92D0DF260F46A5006F3805 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePhotoCardView.swift; sourceTree = "<group>"; };
 		1FC3589D260095F800E4D9C5 /* Tinder App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC358A0260095F800E4D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			children = (
 				1FC358A4260095F800E4D9C5 /* HomeController.swift */,
 				1F7F90B0260E73CD00E2580D /* RegistrationController.swift */,
+				1F92D0D3260F429B006F3805 /* RegistrationPhotoPicker.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -138,6 +143,14 @@
 				1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1F92D0DE260F4696006F3805 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1FC35894260095F800E4D9C5 = {
@@ -165,12 +178,13 @@
 		1FC3589F260095F800E4D9C5 /* Tinder App */ = {
 			isa = PBXGroup;
 			children = (
+				1F92D0DF260F46A5006F3805 /* Bindable.swift */,
+				1F92D0DE260F4696006F3805 /* Views */,
 				1F7B81502603485A0073A70E /* ViewModels */,
 				1F7B814C260347F30073A70E /* Controllers */,
 				1F7B813D260332050073A70E /* StackViews */,
 				1FC358D3260098EF00E4D9C5 /* Helper Files */,
 				1FC358A0260095F800E4D9C5 /* AppDelegate.swift */,
-				1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */,
 				1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */,
 				1FC358AB260095F800E4D9C5 /* LaunchScreen.storyboard */,
 				1FC358AE260095F800E4D9C5 /* Info.plist */,
@@ -201,7 +215,7 @@
 		1FC358D3260098EF00E4D9C5 /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
-				1F92D084260F19F8006F3805 /* userDetailsField.swift */,
+				1F92D084260F19F8006F3805 /* UserDetailsField.swift */,
 				1FC358D42600990200E4D9C5 /* Exensions.swift */,
 			);
 			path = "Helper Files";
@@ -457,8 +471,10 @@
 				1F7B81392603319C0073A70E /* User.swift in Sources */,
 				1F7F90B1260E73CD00E2580D /* RegistrationController.swift in Sources */,
 				1FC358D52600990200E4D9C5 /* Exensions.swift in Sources */,
-				1F92D085260F19F8006F3805 /* userDetailsField.swift in Sources */,
+				1F92D085260F19F8006F3805 /* UserDetailsField.swift in Sources */,
 				1F7B8142260344BE0073A70E /* CardViewModel.swift in Sources */,
+				1F92D0D4260F429B006F3805 /* RegistrationPhotoPicker.swift in Sources */,
+				1F92D0E0260F46A5006F3805 /* Bindable.swift in Sources */,
 				1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */,
 				1F92D097260F2D82006F3805 /* RegistrationViewModel.swift in Sources */,
 				1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */,

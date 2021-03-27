@@ -8,19 +8,19 @@
 import Foundation
 class RegistrationViewModel {
     
-    var emailTextField: userDetailsField?  {
+    var emailTextField: UserDetailsField?  {
         didSet{
             handleKeyboardInput()
         }
     }
     
-    var passwordField: userDetailsField? {
+    var passwordField: UserDetailsField? {
         didSet{
             handleKeyboardInput()
         }
     }
     
-    var usernameField: userDetailsField? {
+    var usernameField: UserDetailsField? {
         didSet{
             handleKeyboardInput()
         }

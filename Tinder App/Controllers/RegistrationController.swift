@@ -9,9 +9,12 @@ import UIKit
 import Foundation
 import Firebase
 import JGProgressHUD
+import RxSwift
+import RxCocoa
 
 class RegistrationController: UIViewController {
-    
+    let imageContainer = PublishSubject<UIImage>()
+    let disposeBag = DisposeBag()
     let hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Registering"
@@ -27,36 +30,40 @@ class RegistrationController: UIViewController {
         return gradient
     }()
     
-    lazy var selectPhotoButton: UIButton = {
+    lazy var userProfileButton: UIButton = {
         let btn = UIButton()
-        btn.layer.cornerRadius = 16
+        btn.layer.cornerRadius = 25
+        btn.imageView?.layer.cornerRadius = 25
+        btn.imageView?.clipsToBounds = true
+        btn.imageView?.contentMode = .scaleAspectFill
         btn.backgroundColor = .white
         btn.setTitle("Select Photo", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .black)
         btn.setTitleColor(.black, for: .normal)
         btn.titleLabel?.textAlignment = .center
         btn.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        btn.addTarget(self, action: #selector(getPhotoAsset), for: .touchUpInside)
         return btn
     }()
     
-    lazy var emailTextField: userDetailsField = {
-        let txt = userDetailsField()
+    lazy var emailTextField: UserDetailsField = {
+        let txt = UserDetailsField()
         txt.placeholder = "Enter Email"
         txt.backgroundColor = .white
         txt.addTarget(self, action: #selector(handleTextChanged), for: .editingChanged)
         return txt
     }()
     
-    lazy var usernameTextField: userDetailsField = {
-        let txt = userDetailsField()
+    lazy var usernameTextField: UserDetailsField = {
+        let txt = UserDetailsField()
         txt.placeholder = "Enter Username"
         txt.backgroundColor = .white
         txt.addTarget(self, action: #selector(handleTextChanged), for: .editingChanged)
         return txt
     }()
     
-    lazy var passwordTextField: userDetailsField = {
-        let txt = userDetailsField()
+    lazy var passwordTextField: UserDetailsField = {
+        let txt = UserDetailsField()
         txt.placeholder = "Enter Password"
         txt.isSecureTextEntry = true
         txt.backgroundColor = .white
@@ -113,9 +120,14 @@ class RegistrationController: UIViewController {
                 self?.registerButton.isEnabled = true
             }
         }
+        
+        _ = imageObserver.subscribe { [weak self] profileImage in
+            self?.userProfileButton.setImage(profileImage, for: .normal)
+        }.disposed(by: disposeBag)
+
     }
     
-    @objc fileprivate func handleTextChanged(textfield: userDetailsField) {
+    @objc fileprivate func handleTextChanged(textfield: UserDetailsField) {
         print(textfield)
         if textfield == passwordTextField {
             registrationModel.passwordField = textfield
@@ -148,7 +160,7 @@ class RegistrationController: UIViewController {
     }
     
     fileprivate func setUpView() {
-        let stackView = UIStackView(arrangedSubviews: [selectPhotoButton,emailTextField,usernameTextField,
+        let stackView = UIStackView(arrangedSubviews: [userProfileButton,emailTextField,usernameTextField,
                                                        passwordTextField, registerButton])
         view.addSubview(stackView)
         stackView.axis = .vertical

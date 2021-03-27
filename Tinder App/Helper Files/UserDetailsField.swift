@@ -7,7 +7,7 @@
 
 import UIKit
 
-class userDetailsField: UITextField {
+class UserDetailsField: UITextField {
     
     let insets: UIEdgeInsets
     

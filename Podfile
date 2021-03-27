@@ -13,6 +13,8 @@ target 'Tinder App' do
   pod 'Firebase/Core'
   pod 'SDWebImage', '~> 5.0'
   pod 'JGProgressHUD'
+  pod 'RxSwift', '6.1.0'
+  pod 'RxCocoa', '6.1.0'
 
   target 'Tinder AppTests' do
     inherit! :search_paths
