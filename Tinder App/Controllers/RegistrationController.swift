@@ -7,7 +7,6 @@
 
 import UIKit
 import Foundation
-import Firebase
 import JGProgressHUD
 import RxSwift
 import RxCocoa
@@ -18,7 +17,6 @@ class RegistrationController: UIViewController {
     let disposeBag = DisposeBag()
     let hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .dark)
-        hud.textLabel.text = "Registering"
         hud.shadow = JGProgressHUDShadow(color: .black, offset: .zero, radius: 5.0, opacity: 0.1)
         return hud
     }()
@@ -80,7 +78,7 @@ class RegistrationController: UIViewController {
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .black)
         btn.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        btn.addTarget(self, action: #selector(didRegister), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(registerUser), for: .touchUpInside)
         return btn
     }()
     
@@ -94,20 +92,19 @@ class RegistrationController: UIViewController {
         handleKeyBoardObserver()
     }
     
-    @objc fileprivate func didRegister() {
-        hud.show(in: self.view)
-        guard let email = emailTextField.text , let password = passwordTextField.text else {return}
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            
-            if let error = error {
-                self.hud.textLabel.text = "Failed Registration"
-                self.hud.detailTextLabel.text = error.localizedDescription
-                self.hud.dismiss(afterDelay: 3, animated: true)
+    @objc fileprivate func registerUser() {
+        self.view.endEditing(true)
+        registrationModel.registerUser { err in
+            if let err = err {
+                self.hud.textLabel.text = "Error Registering"
+                self.hud.detailTextLabel.text = err.localizedDescription
+                self.hud.dismiss(afterDelay: 2, animated: true)
                 return
             }
-            self.hud.dismiss()
-            self.view.endEditing(true)
+            self.hud.textLabel.text = "Registering"
+            self.hud.show(in: self.view)
         }
+        
     }
     
     fileprivate func handleKeyBoardObserver() {
@@ -121,23 +118,30 @@ class RegistrationController: UIViewController {
                 self?.registerButton.isEnabled = true
             }
         })
-            
-        
         _ = registrationModel.imageObserver.subscribe { [weak self] profileImage in
             self?.userProfileButton.setImage(profileImage, for: .normal)
         }.disposed(by: disposeBag)
+        
+        _ = registrationModel.registrationObserver.subscribe(onNext: { [weak self] hasRegistered in
+            if hasRegistered == true {
+                self?.hud.dismiss()
+            }
+            else {
+                self?.hud.show(in: self!.view)
+            }
+            })
     }
     
     @objc fileprivate func handleTextChanged(textfield: UserDetailsField) {
         if textfield == passwordTextField {
-            registrationModel.passwordField = textfield
+            registrationModel.password = textfield
         }
         if textfield == usernameTextField {
-            registrationModel.usernameField = textfield
+            registrationModel.username = textfield
             
         }
         if textfield == emailTextField {
-            registrationModel.emailTextField = textfield
+            registrationModel.email = textfield
         }
     }
     
