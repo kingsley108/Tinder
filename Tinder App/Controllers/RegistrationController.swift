@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 
 class RegistrationController: UIViewController {
-    
+    let registrationModel = RegistrationViewModel()
     var gradient : CAGradientLayer = {
         let gradient = CAGradientLayer()
         gradient.colors = [#colorLiteral(red: 1, green: 0.4529054165, blue: 0.4463197589, alpha: 1).cgColor,#colorLiteral(red: 0.92856282, green: 0.1666355133, blue: 0.5210859776, alpha: 1).cgColor]
@@ -29,32 +29,36 @@ class RegistrationController: UIViewController {
         return btn
     }()
     
-    lazy var emailTextField: DetailsField = {
-        let txt = DetailsField()
+    lazy var emailTextField: userDetailsField = {
+        let txt = userDetailsField()
         txt.placeholder = "Enter Email"
         txt.backgroundColor = .white
+        txt.addTarget(self, action: #selector(handleTextChanged), for: .editingChanged)
         return txt
     }()
     
-    lazy var usernameTextField: DetailsField = {
-        let txt = DetailsField()
+    lazy var usernameTextField: userDetailsField = {
+        let txt = userDetailsField()
         txt.placeholder = "Enter Username"
         txt.backgroundColor = .white
+        txt.addTarget(self, action: #selector(handleTextChanged), for: .editingChanged)
         return txt
     }()
     
-    lazy var passwordTextField: DetailsField = {
-        let txt = DetailsField()
+    lazy var passwordTextField: userDetailsField = {
+        let txt = userDetailsField()
         txt.placeholder = "Enter Password"
         txt.isSecureTextEntry = true
         txt.backgroundColor = .white
+        txt.addTarget(self, action: #selector(handleTextChanged), for: .editingChanged)
         return txt
     }()
     
     lazy var registerButton: UIButton = {
         let btn = UIButton()
         btn.layer.cornerRadius = 25
-        btn.backgroundColor = #colorLiteral(red: 0.8081405759, green: 0.1042295471, blue: 0.3269608021, alpha: 1)
+        btn.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        btn.isEnabled = true
         btn.setTitle("Register", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .black)
@@ -69,6 +73,32 @@ class RegistrationController: UIViewController {
         setGradientBackground()
         setUpView()
         keyboardDismissGesture()
+        handleKeyBoardObserver()
+    }
+    
+    fileprivate func handleKeyBoardObserver() {
+        registrationModel.observer = { [weak self] isCompleted in
+            if isCompleted == true {
+                self?.registerButton.backgroundColor = #colorLiteral(red: 0.8081405759, green: 0.1042295471, blue: 0.3269608021, alpha: 1)
+                self?.registerButton.isEnabled = true
+            } else {
+                self?.registerButton.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                self?.registerButton.isEnabled = true
+            }
+        }
+    }
+    
+    @objc fileprivate func handleTextChanged(textfield: userDetailsField) {
+        print(textfield)
+        if textfield == passwordTextField {
+            registrationModel.passwordField = textfield
+        }
+        if textfield == usernameTextField {
+            registrationModel.usernameField = textfield
+        }
+        if textfield == emailTextField {
+            registrationModel.emailTextField = textfield
+        }
     }
     
     fileprivate func keyboardDismissGesture() {
@@ -92,7 +122,7 @@ class RegistrationController: UIViewController {
     
     fileprivate func setUpView() {
         let stackView = UIStackView(arrangedSubviews: [selectPhotoButton,emailTextField,usernameTextField,
-        passwordTextField, registerButton])
+                                                       passwordTextField, registerButton])
         view.addSubview(stackView)
         stackView.axis = .vertical
         stackView.spacing = 10

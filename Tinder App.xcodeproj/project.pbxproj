@@ -12,7 +12,8 @@
 		1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B8151260348820073A70E /* AdvertiserViewModels.swift */; };
 		1F7F90B1260E73CD00E2580D /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7F90B0260E73CD00E2580D /* RegistrationController.swift */; };
 		1F7F90BC260E754D00E2580D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F90BB260E754D00E2580D /* Assets.xcassets */; };
-		1F92D085260F19F8006F3805 /* DetailsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D084260F19F8006F3805 /* DetailsField.swift */; };
+		1F92D085260F19F8006F3805 /* userDetailsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D084260F19F8006F3805 /* userDetailsField.swift */; };
+		1F92D097260F2D82006F3805 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */; };
 		1FAD71472601E35C006A33EE /* SwipeablePhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */; };
 		1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A0260095F800E4D9C5 /* AppDelegate.swift */; };
 		1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */; };
@@ -52,7 +53,8 @@
 		1F7B8151260348820073A70E /* AdvertiserViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiserViewModels.swift; sourceTree = "<group>"; };
 		1F7F90B0260E73CD00E2580D /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		1F7F90BB260E754D00E2580D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1F92D084260F19F8006F3805 /* DetailsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsField.swift; sourceTree = "<group>"; };
+		1F92D084260F19F8006F3805 /* userDetailsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDetailsField.swift; sourceTree = "<group>"; };
+		1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePhotoCardView.swift; sourceTree = "<group>"; };
 		1FC3589D260095F800E4D9C5 /* Tinder App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC358A0260095F800E4D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				1F7B81382603319C0073A70E /* User.swift */,
 				1F7B8141260344BE0073A70E /* CardViewModel.swift */,
 				1F7B8151260348820073A70E /* AdvertiserViewModels.swift */,
+				1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -195,7 +198,7 @@
 		1FC358D3260098EF00E4D9C5 /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
-				1F92D084260F19F8006F3805 /* DetailsField.swift */,
+				1F92D084260F19F8006F3805 /* userDetailsField.swift */,
 				1FC358D42600990200E4D9C5 /* Exensions.swift */,
 			);
 			path = "Helper Files";
@@ -221,7 +224,6 @@
 				4AC5B0F866885A8FD07B4719 /* Pods-Tinder AppUITests.debug.xcconfig */,
 				FEEC0F15FD9B2E04C0029F3E /* Pods-Tinder AppUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -456,9 +458,10 @@
 				1F7B81392603319C0073A70E /* User.swift in Sources */,
 				1F7F90B1260E73CD00E2580D /* RegistrationController.swift in Sources */,
 				1FC358D52600990200E4D9C5 /* Exensions.swift in Sources */,
-				1F92D085260F19F8006F3805 /* DetailsField.swift in Sources */,
+				1F92D085260F19F8006F3805 /* userDetailsField.swift in Sources */,
 				1F7B8142260344BE0073A70E /* CardViewModel.swift in Sources */,
 				1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */,
+				1F92D097260F2D82006F3805 /* RegistrationViewModel.swift in Sources */,
 				1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */,
 				1FAD71472601E35C006A33EE /* SwipeablePhotoCardView.swift in Sources */,
 			);
