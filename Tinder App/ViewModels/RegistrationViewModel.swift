@@ -61,39 +61,53 @@ class RegistrationViewModel {
     
     func registerUser(completion: @escaping ((Error)?) -> ()) {
         guard let email = email?.text , let password = password?.text else {return}
+        self.hasRegistered.onNext(false)
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            
+    
             if let error = error {
                 completion(error)
                 self.hasRegistered.onNext(false)
                 return
             }
-            self.storeUserProfile(completion: completion)
-            completion(nil)
+            self.saveImageToFirebase(completion: completion)
         }
         
     }
     
-    fileprivate func storeUserProfile(completion: @escaping completion) {
+    //Storing the image to fireBase storage.
+    fileprivate func saveImageToFirebase(completion: @escaping completion) {
         let filename = UUID().uuidString
         guard let uploadData = self.profileImage?.jpegData(compressionQuality: 0.25) else {return}
         let storage = Storage.storage()
         let storageRef = storage.reference()
-        let riversRef = storageRef.child("images/\(filename)")
-        riversRef.putData(uploadData, metadata: nil) { (metadata, err) in
+        let storeImage = storageRef.child("images/\(filename)")
+        storeImage.putData(uploadData, metadata: nil) { (metadata, err) in
             if let err = err {
                 completion(err)
                 self.hasRegistered.onNext(false)
                 return
             }
-            storageRef.downloadURL { (url, err) in
+            
+            storeImage.downloadURL { (url, err) in
                 guard let url = url?.absoluteString else {return}
-                print(url)
+                self.saveUserDocuments(imageUrl: url, completion: completion)
             }
-            self.hasRegistered.onNext(true)
         }
-       
-        completion(nil)
+    }
+    
+    fileprivate func saveUserDocuments(imageUrl: String, completion: @escaping completion) {
+        guard let userId = Auth.auth().currentUser?.uid else {return}
+        let db = Firestore.firestore()
+        let document: [String: Any] = ["fullname": username?.text ?? "", "imageUrl": imageUrl, "uid": userId]
+        db.collection("users").document(userId).setData(document) { err in
+            self.hasRegistered.onNext(true)
+            if let err = err {
+                completion(err)
+                self.hasRegistered.onNext(false)
+                return
+            }
+            completion(nil)
+        }
     }
 }
 

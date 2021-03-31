@@ -12,11 +12,11 @@ protocol ProducesCardViewModel {
 }
 
 class CardViewModel {
-    let imageAsset: [UIImage]
+    let imageAsset: [String]
     let attributedString: NSAttributedString
     let textAlignment: NSTextAlignment
     
-    init(imageAsset: [UIImage], attributedString: NSAttributedString, textAlignment: NSTextAlignment) {
+    init(imageAsset: [String], attributedString: NSAttributedString, textAlignment: NSTextAlignment) {
         self.imageAsset = imageAsset
         self.attributedString = attributedString
         self.textAlignment = textAlignment
@@ -41,5 +41,5 @@ class CardViewModel {
         imageIndex = index
     }
     
-    var imageObserver:((UIImage, Int) -> ())?
+    var imageObserver:((String, Int) -> ())?
 }

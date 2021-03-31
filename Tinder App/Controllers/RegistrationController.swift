@@ -17,6 +17,7 @@ class RegistrationController: UIViewController {
     let disposeBag = DisposeBag()
     let hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Registering"
         hud.shadow = JGProgressHUDShadow(color: .black, offset: .zero, radius: 5.0, opacity: 0.1)
         return hud
     }()
@@ -94,6 +95,7 @@ class RegistrationController: UIViewController {
     
     @objc fileprivate func registerUser() {
         self.view.endEditing(true)
+        hud.show(in: self.view)
         registrationModel.registerUser { err in
             if let err = err {
                 self.hud.textLabel.text = "Error Registering"
@@ -101,8 +103,6 @@ class RegistrationController: UIViewController {
                 self.hud.dismiss(afterDelay: 2, animated: true)
                 return
             }
-            self.hud.textLabel.text = "Registering"
-            self.hud.show(in: self.view)
         }
         
     }

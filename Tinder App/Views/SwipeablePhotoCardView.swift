@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SwipeablePhotoCardView: UIView {
     let gradient = CAGradientLayer()
@@ -17,7 +18,8 @@ class SwipeablePhotoCardView: UIView {
             guard let user = self.cardObject else { return}
             
             self.imagesCount = user.imageAsset.count
-            photoView.image = user.imageAsset.first
+            guard let url = URL(string: user.imageAsset.first ?? "" ) else {return}
+            photoView.sd_setImage(with: url)
             informationDetails.attributedText = user.attributedString
             informationDetails.textAlignment = user.textAlignment
             for _ in 1...imagesCount! {
@@ -76,7 +78,7 @@ class SwipeablePhotoCardView: UIView {
     
     func setGradientBackground() {
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        gradient.locations = [0.5 , 1.1]
+        gradient.locations = [0.9 , 1.1]
         layer.addSublayer(gradient)
     }
     
@@ -87,7 +89,8 @@ class SwipeablePhotoCardView: UIView {
     func setUpObserver() {
         guard let user = self.cardObject else {return}
         user.imageObserver = { [weak self] image, index in
-            self?.photoView.image = user.imageAsset[user.imageIndex]
+            let url = URL(string: user.imageAsset[user.imageIndex])
+            self?.photoView.sd_setImage(with: url)
             self?.tapBar.arrangedSubviews.forEach({$0.backgroundColor = UIColor(white: 0, alpha: 0.1)})
             self?.tapBar.arrangedSubviews[user.imageIndex].backgroundColor = .white
         }

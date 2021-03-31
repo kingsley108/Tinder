@@ -10,9 +10,9 @@ import UIKit
 
 struct AdvertiserViewModels: ProducesCardViewModel{
     let brandName: String?
-    let imageAsset1: [UIImage]
+    let imageAsset1: [String]
     
-    init(brandName: String, imageAsset: [UIImage]) {
+    init(brandName: String, imageAsset: [String]) {
         self.brandName = brandName
         self.imageAsset1 = imageAsset
     }
