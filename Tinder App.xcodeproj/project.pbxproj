@@ -12,6 +12,7 @@
 		1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B8151260348820073A70E /* AdvertiserViewModels.swift */; };
 		1F7F90B1260E73CD00E2580D /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7F90B0260E73CD00E2580D /* RegistrationController.swift */; };
 		1F7F90BC260E754D00E2580D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F90BB260E754D00E2580D /* Assets.xcassets */; };
+		1F81A1782615035900E1BA3D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F81A1772615035900E1BA3D /* SettingsController.swift */; };
 		1F92D085260F19F8006F3805 /* UserDetailsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D084260F19F8006F3805 /* UserDetailsField.swift */; };
 		1F92D097260F2D82006F3805 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */; };
 		1F92D0D4260F429B006F3805 /* RegistrationPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D0D3260F429B006F3805 /* RegistrationPhotoPicker.swift */; };
@@ -26,6 +27,8 @@
 		1FC358D52600990200E4D9C5 /* Exensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358D42600990200E4D9C5 /* Exensions.swift */; };
 		1FC358E02600AF2B00E4D9C5 /* HomeClassStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358DF2600AF2B00E4D9C5 /* HomeClassStackView.swift */; };
 		1FC358EA2600B24D00E4D9C5 /* TopInteractionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358E92600B24D00E4D9C5 /* TopInteractionStackView.swift */; };
+		1FFFE39D26189BA100DD7290 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFFE39C26189BA100DD7290 /* SettingsHeaderView.swift */; };
+		1FFFE3A22618A30900DD7290 /* SettingsImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFFE3A12618A30900DD7290 /* SettingsImagePicker.swift */; };
 		B444D8EF485B815CB0C51434 /* Pods_Tinder_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC23EFEAF4181D8073A2E936 /* Pods_Tinder_AppUITests.framework */; };
 		DB6A0DEA4D28ECC9E3CD9917 /* Pods_Tinder_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C20F93D4DAFC6A5A887107E /* Pods_Tinder_AppTests.framework */; };
 		DEDCBFB91955A6DC788F5A73 /* Pods_Tinder_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8CC179CE407FA18BB9CA4D /* Pods_Tinder_App.framework */; };
@@ -55,6 +58,7 @@
 		1F7B8151260348820073A70E /* AdvertiserViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiserViewModels.swift; sourceTree = "<group>"; };
 		1F7F90B0260E73CD00E2580D /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		1F7F90BB260E754D00E2580D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F81A1772615035900E1BA3D /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		1F92D084260F19F8006F3805 /* UserDetailsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsField.swift; sourceTree = "<group>"; };
 		1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		1F92D0D3260F429B006F3805 /* RegistrationPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhotoPicker.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		1FC358D42600990200E4D9C5 /* Exensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exensions.swift; sourceTree = "<group>"; };
 		1FC358DF2600AF2B00E4D9C5 /* HomeClassStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeClassStackView.swift; sourceTree = "<group>"; };
 		1FC358E92600B24D00E4D9C5 /* TopInteractionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopInteractionStackView.swift; sourceTree = "<group>"; };
+		1FFFE39C26189BA100DD7290 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
+		1FFFE3A12618A30900DD7290 /* SettingsImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsImagePicker.swift; sourceTree = "<group>"; };
 		2C20F93D4DAFC6A5A887107E /* Pods_Tinder_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tinder_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EA4487BC88CCD6744AAA4B /* Pods-Tinder AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tinder AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Tinder AppTests/Pods-Tinder AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4AC5B0F866885A8FD07B4719 /* Pods-Tinder AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tinder AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tinder AppUITests/Pods-Tinder AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +149,16 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		1F81A1762615033900E1BA3D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1F81A1772615035900E1BA3D /* SettingsController.swift */,
+				1FFFE39C26189BA100DD7290 /* SettingsHeaderView.swift */,
+				1FFFE3A12618A30900DD7290 /* SettingsImagePicker.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		1F92D0DE260F4696006F3805 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +192,7 @@
 		1FC3589F260095F800E4D9C5 /* Tinder App */ = {
 			isa = PBXGroup;
 			children = (
+				1F81A1762615033900E1BA3D /* Settings */,
 				1F92D0DE260F4696006F3805 /* Views */,
 				1F7B81502603485A0073A70E /* ViewModels */,
 				1F7B814C260347F30073A70E /* Controllers */,
@@ -467,7 +484,10 @@
 				1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */,
 				1F7B81392603319C0073A70E /* User.swift in Sources */,
 				1F7F90B1260E73CD00E2580D /* RegistrationController.swift in Sources */,
+				1F81A1782615035900E1BA3D /* SettingsController.swift in Sources */,
 				1FC358D52600990200E4D9C5 /* Exensions.swift in Sources */,
+				1FFFE3A22618A30900DD7290 /* SettingsImagePicker.swift in Sources */,
+				1FFFE39D26189BA100DD7290 /* SettingsHeaderView.swift in Sources */,
 				1F92D085260F19F8006F3805 /* UserDetailsField.swift in Sources */,
 				1F7B8142260344BE0073A70E /* CardViewModel.swift in Sources */,
 				1F92D0D4260F429B006F3805 /* RegistrationPhotoPicker.swift in Sources */,
