@@ -139,8 +139,10 @@ class SwipeablePhotoCardView: UIView {
         case .changed:
             if imagesCompleted == true {removeGestureRecognizer(gesture)}
             self.transform = CGAffineTransform(rotationAngle: degrees).translatedBy(x: translation.x, y: translation.y)
+            
         case .ended:
             animateEnded(animatedby: Int(translation.x), gesture: gesture)
+            
         default:
             break
         }
@@ -158,12 +160,6 @@ class SwipeablePhotoCardView: UIView {
             }
             
         } completion: { (_) in
-//            self.frame = CGRect(x: 0,
-//                                y: 0,
-//                                width: self.superview!.frame.width,
-//                                height: self.superview!.frame.height)
-//            self.transform = .identity
-            
         }
     }
 }
