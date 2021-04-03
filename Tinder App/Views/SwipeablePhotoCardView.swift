@@ -131,14 +131,14 @@ class SwipeablePhotoCardView: UIView {
     
     
     @objc func handleGesture(gesture: UIPanGestureRecognizer) {
-        
+        let imagesCompleted = photoView.image == nil
         let translation = gesture.translation(in: nil)
         let degrees = (translation.x / 20) * CGFloat.pi / 180
         
         switch gesture.state {
         case .changed:
+            if imagesCompleted == true {removeGestureRecognizer(gesture)}
             self.transform = CGAffineTransform(rotationAngle: degrees).translatedBy(x: translation.x, y: translation.y)
-            
         case .ended:
             animateEnded(animatedby: Int(translation.x), gesture: gesture)
         default:

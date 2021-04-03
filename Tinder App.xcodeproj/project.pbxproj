@@ -137,10 +137,10 @@
 		1F7B814C260347F30073A70E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1FFFE3C02618BD5600DD7290 /* Home */,
 				1F81A1762615033900E1BA3D /* Settings */,
 				1FFFE3C32618BD6E00DD7290 /* Login */,
 				1FFFE3C22618BD6200DD7290 /* Register */,
-				1FFFE3C02618BD5600DD7290 /* Home */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

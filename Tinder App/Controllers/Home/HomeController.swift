@@ -100,8 +100,8 @@ class HomeController: UIViewController {
 
 extension HomeController: LogOutInteraction {
     func logOutUser() {
-        let registrationController = RegistrationController()
-        let navigationController = UINavigationController(rootViewController: registrationController)
+        let settingsController = SettingsController()
+        let navigationController = UINavigationController(rootViewController: settingsController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
     }

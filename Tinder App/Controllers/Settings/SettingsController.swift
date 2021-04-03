@@ -6,16 +6,20 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsController: UITableViewController, SettingsViewProtocol {
     
     var sender: UIButton?
+    var user: User?
+    let headerView = SettingsHeaderView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = .systemGray5
         tableView.keyboardDismissMode = .interactive
         setUpNavigation()
+        fetchUserDetails()
     }
     
     fileprivate func setUpNavigation () {
@@ -35,43 +39,78 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
 
     }
     
+    fileprivate func fetchUserDetails() {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        let db = Firestore.firestore()
+        let query = db.collection("users").document(uid)
+        
+        query.getDocument { (snapshot, err) in
+            if let err = err {
+                print(err)
+                return
+            }
+            
+            guard let snap = snapshot else {return }
+            if let dict = snap.data() {
+                    guard let name = dict["fullname"] as? String else {return}
+                    guard let imageUrl = dict["imageUrl"] as? String else {return}
+                    self.user = User(name: name, age: nil, imageProfiles: imageUrl, profession: nil, uid: uid)
+                self.setUsersProfileImages()
+                self.tableView.reloadData()
+                }
+            }
+        }
+    
      func didChangeSettingsProfile(for sender: UIButton) {
         self.sender = sender
         self.getPhotoAsset()
     }
     
     @objc fileprivate func dismissView() {
-        
+        dismiss(animated: true, completion: nil)
     }
     
     @objc fileprivate func saveSettings() {
         
     }
     
+    fileprivate func setUsersProfileImages() {
+        guard let user = self.user else {return}
+        guard let url = URL(string: user.imageProfilesUrl) else {return}
+        if headerView.mainDisplayImage1.imageView?.image == nil {
+            headerView.mainDisplayImage1.sd_setImage(with: url, for: .normal, placeholderImage: nil,options: .continueInBackground)
+        }
+    }
+    
+    
     @objc fileprivate func logoutSettings() {
-        
+        let registrationController = RegistrationController()
+        let navigationController = UINavigationController(rootViewController: registrationController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
     }
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return section == 0 ? 0 : 1
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  SettingsViewCell(style: .default, reuseIdentifier: nil)
+        let inputCell = cell.settingsInputField
         cell.selectionStyle = .none
         switch indexPath.section{
         case 1:
-            cell.settingsInputField.placeholder = "Enter Name"
+            inputCell.placeholder = "Enter Name"
+            inputCell.text = user?.name
         case 2:
-            cell.settingsInputField.placeholder = "Enter Profession"
+            inputCell.placeholder = "Enter Profession"
         case 3:
-            cell.settingsInputField.placeholder = "Enter Age"
+            inputCell.placeholder = "Enter Age"
         case 4:
-            cell.settingsInputField.placeholder = "Enter Bio"
+            inputCell.placeholder = "Enter Bio"
         default:
             break
         }
@@ -84,7 +123,6 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            let headerView = SettingsHeaderView()
             headerView.delegate = self
             return headerView
         }
