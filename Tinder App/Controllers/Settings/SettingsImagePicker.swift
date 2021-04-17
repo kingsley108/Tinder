@@ -33,5 +33,6 @@ extension SettingsController: UIImagePickerControllerDelegate & UINavigationCont
     fileprivate func setImage(image: UIImage) {
         guard let sender = self.sender else {return}
         sender.setImage(image, for: .normal)
+        senderReference.append(sender)
     }
 }

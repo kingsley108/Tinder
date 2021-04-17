@@ -7,12 +7,20 @@
 
 import UIKit
 import Firebase
+import JGProgressHUD
 
 class SettingsController: UITableViewController, SettingsViewProtocol {
     
     var sender: UIButton?
+    var senderReference = [UIButton]()
     var user: User?
     let headerView = SettingsHeaderView()
+    
+    let hud: JGProgressHUD = {
+        let hud = JGProgressHUD(style: .dark)
+        hud.shadow = JGProgressHUDShadow(color: .black, offset: .zero, radius: 5.0, opacity: 0.1)
+        return hud
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +28,10 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
         tableView.keyboardDismissMode = .interactive
         setUpNavigation()
         fetchUserDetails()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.setUsersProfileImages()
     }
     
     fileprivate func setUpNavigation () {
@@ -36,7 +48,7 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
         let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveSettings))
         navigationItem.leftBarButtonItem = cancel
         navigationItem.rightBarButtonItems = [saveButton, logoutButton]
-
+        
     }
     
     fileprivate func fetchUserDetails() {
@@ -52,16 +64,14 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
             
             guard let snap = snapshot else {return }
             if let dict = snap.data() {
-                    guard let name = dict["fullname"] as? String else {return}
-                    guard let imageUrl = dict["imageUrl"] as? String else {return}
-                    self.user = User(name: name, age: nil, imageProfiles: imageUrl, profession: nil, uid: uid)
+                self.user = User(dict: dict)
                 self.setUsersProfileImages()
                 self.tableView.reloadData()
-                }
             }
         }
+    }
     
-     func didChangeSettingsProfile(for sender: UIButton) {
+    func didChangeSettingsProfile(for sender: UIButton) {
         self.sender = sender
         self.getPhotoAsset()
     }
@@ -70,16 +80,67 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
         dismiss(animated: true, completion: nil)
     }
     
+
     @objc fileprivate func saveSettings() {
+        self.saveImages()
+    }
+    
+    fileprivate func saveImages() {
+        guard senderReference.count > 0 else {return}
+        let uniqueSenders = Array(Set(senderReference))
+        for senders in uniqueSenders {
+            let tag = senders.tag
+            guard let image = senders.image(for: .normal) else {return}
+            senders.saveFirebaseStorage(for: image) { (urlString) in
+                switch tag {
+                case 1:
+                    self.user?.imageProfile1Url = urlString
+                case 2:
+                    self.user?.imageProfile2Url = urlString
+                case 3:
+                    self.user?.imageProfile3Url = urlString
+                default:
+                    break
+                }
+                self.saveToDatabase()
+            }
+        }
+    }
+    
+    fileprivate func saveToDatabase() {
+        guard let userId = Auth.auth().currentUser?.uid else {return}
+        let db = Firestore.firestore()
+        let document: [String: Any] = ["fullname": user?.name ?? "", "imageUrl": user?.imageProfile1Url ?? "", "profession": user?.profession ?? "", "age" : user?.age ?? 0, "imageProfile2Url" : user?.imageProfile2Url, "imageProfile3Url": user?.imageProfile3Url, "uid": userId ]
         
+        db.collection("users").document(userId).setData(document) { (err) in
+            self.hud.textLabel.text = "Saving Settings"
+            if let err = err {
+                self.hud.textLabel.text = "Error Registering"
+                self.hud.detailTextLabel.text = err.localizedDescription
+            }
+            self.hud.show(in: self.view)
+            self.hud.dismiss(afterDelay: 2, animated: true)
+        }
     }
     
     fileprivate func setUsersProfileImages() {
         guard let user = self.user else {return}
-        guard let url = URL(string: user.imageProfilesUrl) else {return}
         if headerView.mainDisplayImage1.imageView?.image == nil {
+            guard let url = URL(string: user.imageProfile1Url ?? "") else {return}
             headerView.mainDisplayImage1.sd_setImage(with: url, for: .normal, placeholderImage: nil,options: .continueInBackground)
         }
+        
+        
+        if user.imageProfile2Url != nil && headerView.alternateDisplayImage1.imageView?.image == nil {
+                guard let url = URL(string: user.imageProfile2Url ?? "") else {return}
+                headerView.alternateDisplayImage1.sd_setImage(with: url, for: .normal, placeholderImage: nil,options: .continueInBackground)
+        }
+        
+        if user.imageProfile3Url != nil && headerView.alternateDisplayImage2.imageView?.image == nil {
+                guard let url = URL(string: user.imageProfile3Url ?? "") else {return}
+                headerView.alternateDisplayImage2.sd_setImage(with: url, for: .normal, placeholderImage: nil,options: .continueInBackground)
+        }
+        
     }
     
     
@@ -90,60 +151,5 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
         present(navigationController, animated: true)
     }
     
-    // MARK: - Table view data source
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 0 : 1
-    }
-
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  SettingsViewCell(style: .default, reuseIdentifier: nil)
-        let inputCell = cell.settingsInputField
-        cell.selectionStyle = .none
-        switch indexPath.section{
-        case 1:
-            inputCell.placeholder = "Enter Name"
-            inputCell.text = user?.name
-        case 2:
-            inputCell.placeholder = "Enter Profession"
-        case 3:
-            inputCell.placeholder = "Enter Age"
-        case 4:
-            inputCell.placeholder = "Enter Bio"
-        default:
-            break
-        }
-        return cell
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            headerView.delegate = self
-            return headerView
-        }
-        
-        let headerCell = SettingsGroupHeaderLabel()
-        switch section {
-        case 1:
-            headerCell.text = "Name"
-        case 2:
-            headerCell.text = "Profession"
-        case 3:
-            headerCell.text = "Age"
-        case 4:
-            headerCell.text = "Bio"
-        default:
-            headerCell.text = ""
-        }
-        return headerCell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 300 : 40
-    }
 }
+

@@ -22,6 +22,7 @@ class SettingsHeaderView: UIView {
         btn.setTitleColor(.systemBlue, for: .normal)
         btn.layer.cornerRadius = 12
         btn.clipsToBounds = true
+        btn.tag = 1
         btn.imageView?.contentMode = .scaleAspectFill
         btn.titleLabel?.textAlignment = .center
         btn.accessibilityIdentifier = "Button 1"
@@ -38,6 +39,7 @@ class SettingsHeaderView: UIView {
         btn.clipsToBounds = true
         btn.imageView?.contentMode = .scaleAspectFill
         btn.titleLabel?.textAlignment = .center
+        btn.tag = 2
         btn.accessibilityIdentifier = "Button 2"
         btn.addTarget(self, action: #selector(setButtonImage), for: .touchUpInside)
         return btn
@@ -52,6 +54,7 @@ class SettingsHeaderView: UIView {
         btn.clipsToBounds = true
         btn.imageView?.contentMode = .scaleAspectFill
         btn.titleLabel?.textAlignment = .center
+        btn.tag = 3
         btn.accessibilityIdentifier = "Button 3"
         btn.addTarget(self, action: #selector(setButtonImage), for: .touchUpInside)
         return btn

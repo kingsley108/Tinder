@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F42A2A3262B377900853233 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42A2A2262B377900853233 /* SettingsTableView.swift */; };
+		1F42A2AB262B4E8200853233 /* FireBaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42A2AA262B4E8200853233 /* FireBaseStorage.swift */; };
 		1F7B81392603319C0073A70E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B81382603319C0073A70E /* User.swift */; };
 		1F7B8142260344BE0073A70E /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B8141260344BE0073A70E /* CardViewModel.swift */; };
 		1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B8151260348820073A70E /* AdvertiserViewModels.swift */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		1C8CC179CE407FA18BB9CA4D /* Pods_Tinder_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tinder_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F42A2A2262B377900853233 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
+		1F42A2AA262B4E8200853233 /* FireBaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseStorage.swift; sourceTree = "<group>"; };
 		1F7B81382603319C0073A70E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1F7B8141260344BE0073A70E /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		1F7B8151260348820073A70E /* AdvertiserViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertiserViewModels.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				1FFFE3A62618ABF300DD7290 /* SettingsTextField.swift */,
 				1FFFE3B32618B10400DD7290 /* SettingsGroupHeaderLabel.swift */,
 				1FFFE3BB2618B5C200DD7290 /* SettingsViewCell.swift */,
+				1F42A2A2262B377900853233 /* SettingsTableView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			children = (
 				1F92D084260F19F8006F3805 /* UserDetailsField.swift */,
 				1FC358D42600990200E4D9C5 /* Exensions.swift */,
+				1F42A2AA262B4E8200853233 /* FireBaseStorage.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -521,9 +527,11 @@
 				1F7F90B1260E73CD00E2580D /* RegistrationController.swift in Sources */,
 				1F81A1782615035900E1BA3D /* SettingsController.swift in Sources */,
 				1FC358D52600990200E4D9C5 /* Exensions.swift in Sources */,
+				1F42A2AB262B4E8200853233 /* FireBaseStorage.swift in Sources */,
 				1FFFE3A22618A30900DD7290 /* SettingsImagePicker.swift in Sources */,
 				1FFFE39D26189BA100DD7290 /* SettingsHeaderView.swift in Sources */,
 				1F92D085260F19F8006F3805 /* UserDetailsField.swift in Sources */,
+				1F42A2A3262B377900853233 /* SettingsTableView.swift in Sources */,
 				1F7B8142260344BE0073A70E /* CardViewModel.swift in Sources */,
 				1F92D0D4260F429B006F3805 /* RegistrationPhotoPicker.swift in Sources */,
 				1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */,

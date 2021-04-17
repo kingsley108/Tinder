@@ -45,10 +45,7 @@ class HomeController: UIViewController {
             let documents = snap.documents
             documents.forEach({ doc in
                 if let dict = doc.data() as? [String: Any] {
-                    guard let name = dict["fullname"] as? String else {return}
-                    guard let imageUrl = dict["imageUrl"] as? String else {return}
-                    guard let uid = dict["uid"] as? String else {return}
-                    let user = User(name: name, age: nil, imageProfiles: imageUrl, profession: nil, uid: uid)
+                    let user = User(dict: dict)
                     self.lastFetchedUser = user
                     self.users.append(user.convertToCardModel())
                     self.setUpCards(user: user.convertToCardModel())
