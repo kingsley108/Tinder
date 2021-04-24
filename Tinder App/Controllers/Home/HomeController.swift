@@ -8,12 +8,16 @@
 import UIKit
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 import JGProgressHUD
 
 class HomeController: UIViewController {
+    let db = Firestore.firestore()
+    let settingsHandler = SettingsController()
+    var currentUser: User?
     lazy var hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .dark)
-        hud.textLabel.text = "Registering"
+        hud.textLabel.text = "Fetching Users"
         hud.shadow = JGProgressHUDShadow(color: .black, offset: .zero, radius: 5.0, opacity: 0.1)
         return hud
     }()
@@ -26,14 +30,17 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setUpViews()
-        fetchUsers()
+        fetchCurrentUser()
+        settingsHandler.delegate = self
     }
     
-    fileprivate func fetchUsers() {
-        let db = Firestore.firestore()
-        var query = db.collection("users").order(by: "uid").limit(to: 2)
-        if let last = lastFetchedUser?.uid {
+     func fetchUsers() {
+        guard let currentUser = self.currentUser else {return}
+        var query = db.collection("users").whereField("age", isGreaterThanOrEqualTo: currentUser.minAge).whereField("age", isLessThanOrEqualTo: currentUser.maxAge)
+        query = query.order(by: "age").limit(to: 2)
+        if let last = lastFetchedUser?.age {
             query = query.start(after: [last])
+
         }
         query.getDocuments { (snapshot, err) in
             if let err = err {
@@ -53,6 +60,22 @@ class HomeController: UIViewController {
             })
         }
     }
+    
+    fileprivate func fetchCurrentUser() {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {return}
+        db.collection("users").document(currentUserID).getDocument { (snapshot, err) in
+            if let err = err {
+                print(err)
+                return
+            }
+            guard let snapDoc = snapshot else {return}
+            guard let documents = snapDoc.data() else {return}
+            self.currentUser = User(dict: documents)
+            self.fetchUsers()
+        }
+    }
+    
+    
     fileprivate func setUpCards(user: CardViewModel) {
         let swipeableUser = SwipeablePhotoCardView()
         swipeableUser.cardObject = user

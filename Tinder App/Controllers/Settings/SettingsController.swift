@@ -9,12 +9,17 @@ import UIKit
 import Firebase
 import JGProgressHUD
 
+protocol SaveSettingsNotifier {
+    func didSaveRequests()
+}
+
 class SettingsController: UITableViewController, SettingsViewProtocol {
     
     var sender: UIButton?
     var senderReference = [UIButton]()
     var user: User?
     let headerView = SettingsHeaderView()
+    var delegate: SaveSettingsNotifier?
     
     let hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .dark)
@@ -80,13 +85,17 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
         dismiss(animated: true, completion: nil)
     }
     
-
+    
     @objc fileprivate func saveSettings() {
         self.saveImages()
     }
     
     fileprivate func saveImages() {
-        guard senderReference.count > 0 else {return}
+        guard senderReference.count > 0 else {
+            self.saveToDatabase()
+            return
+        }
+        
         let uniqueSenders = Array(Set(senderReference))
         for senders in uniqueSenders {
             let tag = senders.tag
@@ -110,7 +119,7 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
     fileprivate func saveToDatabase() {
         guard let userId = Auth.auth().currentUser?.uid else {return}
         let db = Firestore.firestore()
-        let document: [String: Any] = ["fullname": user?.name ?? "", "imageUrl": user?.imageProfile1Url ?? "", "profession": user?.profession ?? "", "age" : user?.age ?? 0, "imageProfile2Url" : user?.imageProfile2Url, "imageProfile3Url": user?.imageProfile3Url, "uid": userId ]
+        let document: [String: Any] = ["fullname": user?.name ?? "", "imageUrl": user?.imageProfile1Url ?? "", "profession": user?.profession ?? "", "age" : user?.age ?? 0, "imageProfile2Url" : user?.imageProfile2Url, "imageProfile3Url": user?.imageProfile3Url, "uid": userId, "minAge": user?.minAge, "maxAge": user?.maxAge ]
         
         db.collection("users").document(userId).setData(document) { (err) in
             self.hud.textLabel.text = "Saving Settings"
@@ -119,7 +128,11 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
                 self.hud.detailTextLabel.text = err.localizedDescription
             }
             self.hud.show(in: self.view)
-            self.hud.dismiss(afterDelay: 2, animated: true)
+            self.hud.dismiss(afterDelay: 4, animated: true) {
+                self.dismiss(animated: true) {
+                    self.delegate?.didSaveRequests()
+                }
+            }
         }
     }
     
@@ -132,13 +145,13 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
         
         
         if user.imageProfile2Url != nil && headerView.alternateDisplayImage1.imageView?.image == nil {
-                guard let url = URL(string: user.imageProfile2Url ?? "") else {return}
-                headerView.alternateDisplayImage1.sd_setImage(with: url, for: .normal, placeholderImage: nil,options: .continueInBackground)
+            guard let url = URL(string: user.imageProfile2Url ?? "") else {return}
+            headerView.alternateDisplayImage1.sd_setImage(with: url, for: .normal, placeholderImage: nil,options: .continueInBackground)
         }
         
         if user.imageProfile3Url != nil && headerView.alternateDisplayImage2.imageView?.image == nil {
-                guard let url = URL(string: user.imageProfile3Url ?? "") else {return}
-                headerView.alternateDisplayImage2.sd_setImage(with: url, for: .normal, placeholderImage: nil,options: .continueInBackground)
+            guard let url = URL(string: user.imageProfile3Url ?? "") else {return}
+            headerView.alternateDisplayImage2.sd_setImage(with: url, for: .normal, placeholderImage: nil,options: .continueInBackground)
         }
         
     }
@@ -151,5 +164,43 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
         present(navigationController, animated: true)
     }
     
+    @objc func userChangeRequest(sender: UITextField) {
+        let textfieldId = sender.placeholder
+        switch textfieldId {
+        case "Enter Name":
+            user?.name = sender.text ?? ""
+        case "Enter Profession":
+            user?.profession = sender.text ?? ""
+            
+        case "Enter Age":
+            user?.age = Int(sender.text ?? "0")
+            
+        //        case "Enter Bio":
+        //        user?.bio = sender.text ?? ""
+        
+        default:
+            break
+        }
+    }
+    
+    @objc func sliderChanged (sender: UISlider) {
+        let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 5)) as? AgeRangeCell
+        let ageRange = Int(sender.value)
+        switch sender.tag {
+        case 1 :
+            let roundedMax = String(format: "%i",Int(sender.value))
+            cell?.maxAgeRange.text = "Max: \(roundedMax)"
+            self.user?.maxAge = ageRange
+            
+        case 2:
+            let roundedMin = String(format: "%i",Int(sender.value))
+            cell?.minAgeRange.text = "Min: \(roundedMin)"
+            self.user?.minAge = ageRange
+        default:
+            break
+            
+        }
+        
 }
 
+}

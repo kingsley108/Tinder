@@ -19,6 +19,9 @@
 		1F92D097260F2D82006F3805 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */; };
 		1F92D0D4260F429B006F3805 /* RegistrationPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92D0D3260F429B006F3805 /* RegistrationPhotoPicker.swift */; };
 		1F92D122260F88C9006F3805 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F92D121260F88C9006F3805 /* GoogleService-Info.plist */; };
+		1F96B02C263443F0005E7C92 /* AgeRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B02B263443F0005E7C92 /* AgeRangeCell.swift */; };
+		1F96B0342634A520005E7C92 /* AgeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B0332634A520005E7C92 /* AgeConverter.swift */; };
+		1F96B0882634AFBA005E7C92 /* HomeSettingsSaveRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B0872634AFBA005E7C92 /* HomeSettingsSaveRequests.swift */; };
 		1FAD71472601E35C006A33EE /* SwipeablePhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */; };
 		1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A0260095F800E4D9C5 /* AppDelegate.swift */; };
 		1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */; };
@@ -70,6 +73,9 @@
 		1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		1F92D0D3260F429B006F3805 /* RegistrationPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPhotoPicker.swift; sourceTree = "<group>"; };
 		1F92D121260F88C9006F3805 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1F96B02B263443F0005E7C92 /* AgeRangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeCell.swift; sourceTree = "<group>"; };
+		1F96B0332634A520005E7C92 /* AgeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeConverter.swift; sourceTree = "<group>"; };
+		1F96B0872634AFBA005E7C92 /* HomeSettingsSaveRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSettingsSaveRequests.swift; sourceTree = "<group>"; };
 		1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePhotoCardView.swift; sourceTree = "<group>"; };
 		1FC3589D260095F800E4D9C5 /* Tinder App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC358A0260095F800E4D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 				1FFFE3B32618B10400DD7290 /* SettingsGroupHeaderLabel.swift */,
 				1FFFE3BB2618B5C200DD7290 /* SettingsViewCell.swift */,
 				1F42A2A2262B377900853233 /* SettingsTableView.swift */,
+				1F96B02B263443F0005E7C92 /* AgeRangeCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -246,6 +253,7 @@
 				1F92D084260F19F8006F3805 /* UserDetailsField.swift */,
 				1FC358D42600990200E4D9C5 /* Exensions.swift */,
 				1F42A2AA262B4E8200853233 /* FireBaseStorage.swift */,
+				1F96B0332634A520005E7C92 /* AgeConverter.swift */,
 			);
 			path = "Helper Files";
 			sourceTree = "<group>";
@@ -254,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				1FC358A4260095F800E4D9C5 /* HomeController.swift */,
+				1F96B0872634AFBA005E7C92 /* HomeSettingsSaveRequests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -526,12 +535,15 @@
 				1F7B81392603319C0073A70E /* User.swift in Sources */,
 				1F7F90B1260E73CD00E2580D /* RegistrationController.swift in Sources */,
 				1F81A1782615035900E1BA3D /* SettingsController.swift in Sources */,
+				1F96B0882634AFBA005E7C92 /* HomeSettingsSaveRequests.swift in Sources */,
 				1FC358D52600990200E4D9C5 /* Exensions.swift in Sources */,
+				1F96B0342634A520005E7C92 /* AgeConverter.swift in Sources */,
 				1F42A2AB262B4E8200853233 /* FireBaseStorage.swift in Sources */,
 				1FFFE3A22618A30900DD7290 /* SettingsImagePicker.swift in Sources */,
 				1FFFE39D26189BA100DD7290 /* SettingsHeaderView.swift in Sources */,
 				1F92D085260F19F8006F3805 /* UserDetailsField.swift in Sources */,
 				1F42A2A3262B377900853233 /* SettingsTableView.swift in Sources */,
+				1F96B02C263443F0005E7C92 /* AgeRangeCell.swift in Sources */,
 				1F7B8142260344BE0073A70E /* CardViewModel.swift in Sources */,
 				1F92D0D4260F429B006F3805 /* RegistrationPhotoPicker.swift in Sources */,
 				1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */,
