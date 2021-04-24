@@ -119,7 +119,7 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
     fileprivate func saveToDatabase() {
         guard let userId = Auth.auth().currentUser?.uid else {return}
         let db = Firestore.firestore()
-        let document: [String: Any] = ["fullname": user?.name ?? "", "imageUrl": user?.imageProfile1Url ?? "", "profession": user?.profession ?? "", "age" : user?.age ?? 0, "imageProfile2Url" : user?.imageProfile2Url, "imageProfile3Url": user?.imageProfile3Url, "uid": userId, "minAge": user?.minAge, "maxAge": user?.maxAge ]
+        let document: [String: Any] = ["fullname": user?.name ?? "", "imageUrl": user?.imageProfile1Url ?? "", "profession": user?.profession ?? "", "age" : user?.age ?? 0, "imageProfile2Url" : user?.imageProfile2Url, "imageProfile3Url": user?.imageProfile3Url, "uid": userId, "minAge": user?.minAge, "maxAge": user?.maxAge]
         
         db.collection("users").document(userId).setData(document) { (err) in
             self.hud.textLabel.text = "Saving Settings"
@@ -158,10 +158,16 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
     
     
     @objc fileprivate func logoutSettings() {
-        let registrationController = RegistrationController()
-        let navigationController = UINavigationController(rootViewController: registrationController)
-        navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true)
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            let registrationController = RegistrationController()
+            let navigationController = UINavigationController(rootViewController: registrationController)
+            navigationController.modalPresentationStyle = .fullScreen
+            present(navigationController, animated: true)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
     
     @objc func userChangeRequest(sender: UITextField) {
@@ -201,6 +207,6 @@ class SettingsController: UITableViewController, SettingsViewProtocol {
             
         }
         
-}
-
+    }
+    
 }

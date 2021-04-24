@@ -14,6 +14,7 @@ import JGProgressHUD
 class HomeController: UIViewController {
     let db = Firestore.firestore()
     let settingsHandler = SettingsController()
+    let registrationDelegateHandler = RegistrationController()
     var currentUser: User?
     lazy var hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .dark)
@@ -31,10 +32,23 @@ class HomeController: UIViewController {
         view.backgroundColor = .white
         setUpViews()
         fetchCurrentUser()
-        settingsHandler.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if Auth.auth().currentUser == nil {
+            let loginController = LoginController()
+            loginController.delegate = self
+            settingsHandler.delegate = self
+            registrationDelegateHandler.delegate = self
+            let navigationController = UINavigationController(rootViewController: loginController)
+            navigationController.modalPresentationStyle = .fullScreen
+            present(navigationController, animated: true)
+        }
     }
     
      func fetchUsers() {
+        self.hud.show(in: self.view)
         guard let currentUser = self.currentUser else {return}
         var query = db.collection("users").whereField("age", isGreaterThanOrEqualTo: currentUser.minAge).whereField("age", isLessThanOrEqualTo: currentUser.maxAge)
         query = query.order(by: "age").limit(to: 2)
@@ -61,7 +75,7 @@ class HomeController: UIViewController {
         }
     }
     
-    fileprivate func fetchCurrentUser() {
+     func fetchCurrentUser() {
         guard let currentUserID = Auth.auth().currentUser?.uid else {return}
         db.collection("users").document(currentUserID).getDocument { (snapshot, err) in
             if let err = err {
@@ -113,7 +127,6 @@ class HomeController: UIViewController {
     }
 
     @objc fileprivate func refreshView() {
-        hud.show(in: self.view)
         fetchUsers()
     }
 }

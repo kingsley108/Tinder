@@ -15,6 +15,7 @@ class RegistrationController: UIViewController {
     let registrationModel = RegistrationViewModel()
     let imageContainer = PublishSubject<UIImage>()
     let disposeBag = DisposeBag()
+    var delegate: HomeControllerUserRequest?
     let hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Registering"
@@ -83,6 +84,14 @@ class RegistrationController: UIViewController {
         return btn
     }()
     
+    lazy var signInNavigation: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Have an Account? Log in", for: .normal)
+        btn.addTarget(self, action: #selector(userLoginHandler), for: .touchUpInside)
+        btn.setTitleColor(.white, for: .normal)
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -103,8 +112,15 @@ class RegistrationController: UIViewController {
                 self.hud.dismiss(afterDelay: 2, animated: true)
                 return
             }
+            self.dismiss(animated: true) {
+                self.delegate?.newUserRefetching()
+            }
         }
         
+    }
+    
+    @objc fileprivate func userLoginHandler() {
+        navigationController?.pushViewController(LoginController(), animated: true)
     }
     
     fileprivate func handleKeyBoardObserver() {
@@ -168,9 +184,12 @@ class RegistrationController: UIViewController {
         let stackView = UIStackView(arrangedSubviews: [userProfileButton,emailTextField,usernameTextField,
                                                        passwordTextField, registerButton])
         view.addSubview(stackView)
+        view.addSubview(signInNavigation)
         stackView.axis = .vertical
         stackView.spacing = 10
         stackView.anchor(top: nil, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: nil, padding: .init(top: 0, left: 50, bottom: 0, right: 50))
         stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        signInNavigation.anchor(top: nil, leading: nil, trailing: nil, bottom: view.bottomAnchor,size: CGSize(width: 200, height: 100),padding: .init(top: 0, left: 0, bottom: 0, right: 0))
+        signInNavigation.centerXAnchor.constraint(equalTo: view.centerXAnchor) .isActive = true
     }
 }

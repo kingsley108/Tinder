@@ -12,3 +12,9 @@ extension HomeController: SaveSettingsNotifier {
     }
     
 }
+
+extension HomeController: HomeControllerUserRequest {
+    func newUserRefetching() {
+        self.fetchCurrentUser()
+    }
+}

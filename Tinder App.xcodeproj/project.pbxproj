@@ -22,6 +22,8 @@
 		1F96B02C263443F0005E7C92 /* AgeRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B02B263443F0005E7C92 /* AgeRangeCell.swift */; };
 		1F96B0342634A520005E7C92 /* AgeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B0332634A520005E7C92 /* AgeConverter.swift */; };
 		1F96B0882634AFBA005E7C92 /* HomeSettingsSaveRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B0872634AFBA005E7C92 /* HomeSettingsSaveRequests.swift */; };
+		1F96B0942634BFEA005E7C92 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B0932634BFEA005E7C92 /* LoginController.swift */; };
+		1F96B0992634C158005E7C92 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B0982634C158005E7C92 /* LoginViewModel.swift */; };
 		1FAD71472601E35C006A33EE /* SwipeablePhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */; };
 		1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A0260095F800E4D9C5 /* AppDelegate.swift */; };
 		1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */; };
@@ -76,6 +78,8 @@
 		1F96B02B263443F0005E7C92 /* AgeRangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeCell.swift; sourceTree = "<group>"; };
 		1F96B0332634A520005E7C92 /* AgeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeConverter.swift; sourceTree = "<group>"; };
 		1F96B0872634AFBA005E7C92 /* HomeSettingsSaveRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSettingsSaveRequests.swift; sourceTree = "<group>"; };
+		1F96B0932634BFEA005E7C92 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		1F96B0982634C158005E7C92 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePhotoCardView.swift; sourceTree = "<group>"; };
 		1FC3589D260095F800E4D9C5 /* Tinder App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC358A0260095F800E4D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,7 +165,6 @@
 				1F7B81382603319C0073A70E /* User.swift */,
 				1F7B8141260344BE0073A70E /* CardViewModel.swift */,
 				1F7B8151260348820073A70E /* AdvertiserViewModels.swift */,
-				1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -270,8 +273,9 @@
 		1FFFE3C22618BD6200DD7290 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				1F7F90B0260E73CD00E2580D /* RegistrationController.swift */,
 				1F92D0D3260F429B006F3805 /* RegistrationPhotoPicker.swift */,
+				1F7F90B0260E73CD00E2580D /* RegistrationController.swift */,
+				1F92D096260F2D82006F3805 /* RegistrationViewModel.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -279,6 +283,8 @@
 		1FFFE3C32618BD6E00DD7290 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				1F96B0932634BFEA005E7C92 /* LoginController.swift */,
+				1F96B0982634C158005E7C92 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -548,8 +554,10 @@
 				1F92D0D4260F429B006F3805 /* RegistrationPhotoPicker.swift in Sources */,
 				1F7B8152260348820073A70E /* AdvertiserViewModels.swift in Sources */,
 				1F92D097260F2D82006F3805 /* RegistrationViewModel.swift in Sources */,
+				1F96B0992634C158005E7C92 /* LoginViewModel.swift in Sources */,
 				1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */,
 				1FAD71472601E35C006A33EE /* SwipeablePhotoCardView.swift in Sources */,
+				1F96B0942634BFEA005E7C92 /* LoginController.swift in Sources */,
 				1FFFE3B42618B10400DD7290 /* SettingsGroupHeaderLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
