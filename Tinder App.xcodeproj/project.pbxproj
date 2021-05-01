@@ -24,6 +24,7 @@
 		1F96B0882634AFBA005E7C92 /* HomeSettingsSaveRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B0872634AFBA005E7C92 /* HomeSettingsSaveRequests.swift */; };
 		1F96B0942634BFEA005E7C92 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B0932634BFEA005E7C92 /* LoginController.swift */; };
 		1F96B0992634C158005E7C92 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B0982634C158005E7C92 /* LoginViewModel.swift */; };
+		1F96B228263D9CB4005E7C92 /* UserDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96B227263D9CB3005E7C92 /* UserDetailsController.swift */; };
 		1FAD71472601E35C006A33EE /* SwipeablePhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */; };
 		1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A0260095F800E4D9C5 /* AppDelegate.swift */; };
 		1FC358A3260095F800E4D9C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC358A2260095F800E4D9C5 /* SceneDelegate.swift */; };
@@ -80,6 +81,7 @@
 		1F96B0872634AFBA005E7C92 /* HomeSettingsSaveRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSettingsSaveRequests.swift; sourceTree = "<group>"; };
 		1F96B0932634BFEA005E7C92 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		1F96B0982634C158005E7C92 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1F96B227263D9CB3005E7C92 /* UserDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsController.swift; sourceTree = "<group>"; };
 		1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeablePhotoCardView.swift; sourceTree = "<group>"; };
 		1FC3589D260095F800E4D9C5 /* Tinder App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC358A0260095F800E4D9C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,10 +153,10 @@
 		1F7B814C260347F30073A70E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1FFFE3C22618BD6200DD7290 /* Register */,
 				1FFFE3C02618BD5600DD7290 /* Home */,
 				1F81A1762615033900E1BA3D /* Settings */,
-				1FFFE3C32618BD6E00DD7290 /* Login */,
-				1FFFE3C22618BD6200DD7290 /* Register */,
+				1F96B226263D9C3E005E7C92 /* UserDetailsController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,6 +182,7 @@
 				1FFFE3BB2618B5C200DD7290 /* SettingsViewCell.swift */,
 				1F42A2A2262B377900853233 /* SettingsTableView.swift */,
 				1F96B02B263443F0005E7C92 /* AgeRangeCell.swift */,
+				1FFFE3C32618BD6E00DD7290 /* Login */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -190,6 +193,14 @@
 				1FAD71462601E35C006A33EE /* SwipeablePhotoCardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1F96B226263D9C3E005E7C92 /* UserDetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				1F96B227263D9CB3005E7C92 /* UserDetailsController.swift */,
+			);
+			path = UserDetailsController;
 			sourceTree = "<group>";
 		};
 		1FC35894260095F800E4D9C5 = {
@@ -539,6 +550,7 @@
 				1FC358A1260095F800E4D9C5 /* AppDelegate.swift in Sources */,
 				1FFFE3BC2618B5C200DD7290 /* SettingsViewCell.swift in Sources */,
 				1F7B81392603319C0073A70E /* User.swift in Sources */,
+				1F96B228263D9CB4005E7C92 /* UserDetailsController.swift in Sources */,
 				1F7F90B1260E73CD00E2580D /* RegistrationController.swift in Sources */,
 				1F81A1782615035900E1BA3D /* SettingsController.swift in Sources */,
 				1F96B0882634AFBA005E7C92 /* HomeSettingsSaveRequests.swift in Sources */,

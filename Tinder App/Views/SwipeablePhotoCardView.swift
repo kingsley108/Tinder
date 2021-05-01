@@ -79,7 +79,7 @@ class SwipeablePhotoCardView: UIView {
     
     fileprivate func setUpPhotoCardView() {
         informationDetailsLabel.anchor(top: nil, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 0))
-        userDetailsPageButton.anchor(top: nil, leading: nil, trailing: trailingAnchor, bottom: bottomAnchor, size: .init(width: 44, height: 44), padding: .init(top: 0, left: 0, bottom: 25, right: 25))
+        userDetailsPageButton.anchor(top: nil, leading: nil, trailing: trailingAnchor, bottom: bottomAnchor, size: .init(width: 44, height: 44), padding: .init(top: 0, left: 0, bottom: 20, right: 20))
     }
     
     fileprivate func setUpView() {

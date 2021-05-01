@@ -18,3 +18,13 @@ extension HomeController: HomeControllerUserRequest {
         self.fetchCurrentUser()
     }
 }
+
+extension HomeController: HomeUserDetailsTransition {
+    func transitionToUserDetails() {
+        let userDetailsPage = UserDetailsController()
+        userDetailsPage.modalPresentationStyle = .fullScreen
+        present(userDetailsPage, animated: true)
+    }
+    
+    
+}

@@ -24,6 +24,7 @@ class HomeController: UIViewController {
         return hud
     }()
     let cardContainer = SwipeablePhotoCardView()
+    
     var lastFetchedUser: User? = nil
     
     override func viewDidLoad() {
@@ -35,6 +36,7 @@ class HomeController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        cardContainer.delegate = self
         if Auth.auth().currentUser == nil {
             let loginController = LoginController()
             loginController.delegate = self
