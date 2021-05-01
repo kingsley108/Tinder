@@ -15,6 +15,7 @@ class HomeController: UIViewController {
     let db = Firestore.firestore()
     let settingsHandler = SettingsController()
     let registrationDelegateHandler = RegistrationController()
+    var users = [CardViewModel]()
     var currentUser: User?
     lazy var hud: JGProgressHUD = {
         let hud = JGProgressHUD(style: .dark)
@@ -22,8 +23,6 @@ class HomeController: UIViewController {
         hud.shadow = JGProgressHUDShadow(color: .black, offset: .zero, radius: 5.0, opacity: 0.1)
         return hud
     }()
-    
-    var users = [CardViewModel]()
     let cardContainer = SwipeablePhotoCardView()
     var lastFetchedUser: User? = nil
     
@@ -50,12 +49,18 @@ class HomeController: UIViewController {
      func fetchUsers() {
         self.hud.show(in: self.view)
         guard let currentUser = self.currentUser else {return}
-        var query = db.collection("users").whereField("age", isGreaterThanOrEqualTo: currentUser.minAge).whereField("age", isLessThanOrEqualTo: currentUser.maxAge)
-        query = query.order(by: "age").limit(to: 2)
-        if let last = lastFetchedUser?.age {
-            query = query.start(after: [last])
-
+        if !self.users.isEmpty {
+            self.users.removeAll()
+            for subView in self.cardContainer.subviews  {
+                subView.removeFromSuperview()
+            }
         }
+        
+        var query = db.collection("users").whereField("age", isGreaterThanOrEqualTo: currentUser.minAge).whereField("age", isLessThanOrEqualTo: currentUser.maxAge)
+        query = query.order(by: "age")
+//        if let last = lastFetchedUser?.age {
+//            query = query.start(after: [last])
+//        }
         query.getDocuments { (snapshot, err) in
             if let err = err {
                 print(err)
@@ -98,15 +103,6 @@ class HomeController: UIViewController {
         swipeableUser.fillToSuperView()
     }
     
-//    fileprivate func setUpCardView() {
-//        users.forEach { (user) in
-//            let swipeableUser = SwipeablePhotoCardView()
-//            swipeableUser.cardObject = user
-//            cardContainer.addSubview(swipeableUser)
-//            swipeableUser.fillToSuperView()
-//        }
-//    }
-    
     
     fileprivate func setUpViews() {
         let topView = TopInteractionStackView()
@@ -127,7 +123,7 @@ class HomeController: UIViewController {
     }
 
     @objc fileprivate func refreshView() {
-        fetchUsers()
+        fetchCurrentUser()
     }
 }
 
