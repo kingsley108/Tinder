@@ -72,9 +72,12 @@ class HomeController: UIViewController {
             documents.forEach({ doc in
                 if let dict = doc.data() as? [String: Any] {
                     let user = User(dict: dict)
-                    self.lastFetchedUser = user
-                    self.users.append(user.convertToCardModel())
-                    self.setUpCards(user: user.convertToCardModel())
+                    let isNotCurrentUser = user.uid != currentUser.uid
+                    if isNotCurrentUser {
+                        self.lastFetchedUser = user
+                        self.users.append(user.convertToCardModel())
+                        self.setUpCards(user: user.convertToCardModel())
+                    }
                 }
             })
         }

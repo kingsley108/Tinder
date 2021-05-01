@@ -8,7 +8,12 @@
 import UIKit
 import SDWebImage
 
+protocol HomeUserDetailsTransition {
+    func transitionToUserDetails()
+}
+
 class SwipeablePhotoCardView: UIView {
+    var delegate: HomeUserDetailsTransition?
     let gradient = CAGradientLayer()
     var tapBar = UIStackView()
     var index = 0
@@ -20,8 +25,8 @@ class SwipeablePhotoCardView: UIView {
             self.imagesCount = user.imageAsset.count
             guard let url = URL(string: user.imageAsset.first ?? "" ) else {return}
             photoView.sd_setImage(with: url)
-            informationDetails.attributedText = user.attributedString
-            informationDetails.textAlignment = user.textAlignment
+            informationDetailsLabel.attributedText = user.attributedString
+            informationDetailsLabel.textAlignment = user.textAlignment
             for _ in 1...imagesCount! {
                 let view = UIView()
                 view.backgroundColor = UIColor(white: 0, alpha: 0.1)
@@ -41,13 +46,26 @@ class SwipeablePhotoCardView: UIView {
         return img
     }()
     
-    var informationDetails: UILabel = {
+    var informationDetailsLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = .white
         return label
     }()
     
+    var userDetailsPageButton: UIButton = {
+        let btn = UIButton()
+        btn.tintColor = .white
+        btn.setImage(UIImage(systemName: "info.circle.fill")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFill
+        btn.imageView?.layer.transform = CATransform3DMakeScale(2, 2, 2)
+        btn.addTarget(self, action: #selector(displayUserDetailsPage), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc fileprivate func displayUserDetailsPage() {
+        delegate?.transitionToUserDetails()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,13 +77,19 @@ class SwipeablePhotoCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    fileprivate func setUpPhotoCardView() {
+        informationDetailsLabel.anchor(top: nil, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 0))
+        userDetailsPageButton.anchor(top: nil, leading: nil, trailing: trailingAnchor, bottom: bottomAnchor, size: .init(width: 44, height: 44), padding: .init(top: 0, left: 0, bottom: 25, right: 25))
+    }
+    
     fileprivate func setUpView() {
         addSubview(photoView)
         photoView.fillToSuperView()
         setUpTapBar()
         setGradientBackground()
-        addSubview(informationDetails)
-        informationDetails.anchor(top: nil, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, padding: .init(top: 0, left: 16, bottom: 16, right: 0))
+        addSubview(informationDetailsLabel)
+        addSubview(userDetailsPageButton)
+        setUpPhotoCardView()
     }
     
     func setUpTapBar() {
@@ -102,7 +126,6 @@ class SwipeablePhotoCardView: UIView {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         addGestureRecognizer(tapGesture)
         addGestureRecognizer(panGesture)
-         
     }
     
     @objc func handleTapGesture(gesture: UITapGestureRecognizer) {
