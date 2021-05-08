@@ -37,6 +37,21 @@ class User: ProducesCardViewModel {
         attributedString.append(NSAttributedString(string: "  "))
         attributedString.append(NSAttributedString(string: "\(age!.toString())", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
         attributedString.append(NSAttributedString(string: "\n \(profession ?? "" )" , attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
-        return CardViewModel(imageAsset: [imageProfile1Url!], attributedString: attributedString, textAlignment: .left)
+        let userImages = setUpImages()
+        return CardViewModel(imageAsset: userImages, attributedString: attributedString, textAlignment: .left)
+    }
+    
+    func setUpImages() -> [String] {
+        var nonNilImages = [String]()
+        if let images = imageProfile1Url, !images.isEmpty{
+            nonNilImages.append(images)
+        }
+        if let images = imageProfile2Url, !images.isEmpty {
+            nonNilImages.append(images)
+        }
+        if let images = imageProfile3Url, !images.isEmpty {
+            nonNilImages.append(images)
+        }
+        return nonNilImages
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2693832646B78F00BEF755 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2693822646B78F00BEF755 /* PageViewController.swift */; };
+		1F26938B2646B9EE00BEF755 /* PhotoControllerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26938A2646B9EE00BEF755 /* PhotoControllerClass.swift */; };
 		1F42A2A3262B377900853233 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42A2A2262B377900853233 /* SettingsTableView.swift */; };
 		1F42A2AB262B4E8200853233 /* FireBaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F42A2AA262B4E8200853233 /* FireBaseStorage.swift */; };
 		1F7B81392603319C0073A70E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B81382603319C0073A70E /* User.swift */; };
@@ -64,6 +66,8 @@
 
 /* Begin PBXFileReference section */
 		1C8CC179CE407FA18BB9CA4D /* Pods_Tinder_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tinder_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F2693822646B78F00BEF755 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		1F26938A2646B9EE00BEF755 /* PhotoControllerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoControllerClass.swift; sourceTree = "<group>"; };
 		1F42A2A2262B377900853233 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
 		1F42A2AA262B4E8200853233 /* FireBaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseStorage.swift; sourceTree = "<group>"; };
 		1F7B81382603319C0073A70E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -141,6 +145,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F2693812646B75800BEF755 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F2693822646B78F00BEF755 /* PageViewController.swift */,
+				1F26938A2646B9EE00BEF755 /* PhotoControllerClass.swift */,
+			);
+			path = PageViewController;
+			sourceTree = "<group>";
+		};
 		1F7B813D260332050073A70E /* StackViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +211,7 @@
 		1F96B226263D9C3E005E7C92 /* UserDetailsController */ = {
 			isa = PBXGroup;
 			children = (
+				1F2693812646B75800BEF755 /* PageViewController */,
 				1F96B227263D9CB3005E7C92 /* UserDetailsController.swift */,
 			);
 			path = UserDetailsController;
@@ -551,10 +565,12 @@
 				1FFFE3BC2618B5C200DD7290 /* SettingsViewCell.swift in Sources */,
 				1F7B81392603319C0073A70E /* User.swift in Sources */,
 				1F96B228263D9CB4005E7C92 /* UserDetailsController.swift in Sources */,
+				1F2693832646B78F00BEF755 /* PageViewController.swift in Sources */,
 				1F7F90B1260E73CD00E2580D /* RegistrationController.swift in Sources */,
 				1F81A1782615035900E1BA3D /* SettingsController.swift in Sources */,
 				1F96B0882634AFBA005E7C92 /* HomeSettingsSaveRequests.swift in Sources */,
 				1FC358D52600990200E4D9C5 /* Exensions.swift in Sources */,
+				1F26938B2646B9EE00BEF755 /* PhotoControllerClass.swift in Sources */,
 				1F96B0342634A520005E7C92 /* AgeConverter.swift in Sources */,
 				1F42A2AB262B4E8200853233 /* FireBaseStorage.swift in Sources */,
 				1FFFE3A22618A30900DD7290 /* SettingsImagePicker.swift in Sources */,

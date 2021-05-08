@@ -11,11 +11,11 @@ import SDWebImage
 
 class UserDetailsController: UIViewController, UIScrollViewDelegate {
     
+    var pageViewController = PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     var cardModel: CardViewModel? {
         didSet {
-            guard let url = URL(string: cardModel?.imageAsset.first ?? "") else {return}
-            userImageView.sd_setImage(with: url)
             userInformationLabel.attributedText = cardModel?.attributedString
+            pageViewController.cardModel = self.cardModel
         }
     }
     
@@ -75,12 +75,7 @@ class UserDetailsController: UIViewController, UIScrollViewDelegate {
         return btn
     }()
     
-    lazy var userImageView: UIImageView = {
-        let img = UIImageView()
-        img.contentMode = .scaleAspectFill
-        img.clipsToBounds = true
-        return img
-    }()
+    lazy var userImageView = pageViewController.view!
     
     lazy var userInformationLabel : UILabel = {
         let lbl = UILabel()
@@ -110,17 +105,20 @@ class UserDetailsController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    override func viewDidLayoutSubviews() {
+        userImageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
+    }
+    
     @objc fileprivate func dismissView() {
         dismiss(animated: true, completion: nil)
     }
     
     fileprivate func updateConstraints() {
         detailsScrollView.fillToSuperView()
-        userImageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
-        blurEffect.anchor(top:userImageView.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: detailsScrollView.safeAreaLayoutGuide.topAnchor)
+        blurEffect.anchor(top:view.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: detailsScrollView.safeAreaLayoutGuide.topAnchor)
         userInformationLabel.anchor(top: userImageView.bottomAnchor, leading: detailsScrollView.leadingAnchor, trailing: detailsScrollView.trailingAnchor, bottom: detailsScrollView.bottomAnchor, padding: UIEdgeInsets.init(top: 16, left: 16, bottom: 0, right: 0))
         dismissButton.anchor(top: nil, leading: nil, trailing:userImageView.trailingAnchor, bottom: userImageView.bottomAnchor,size: .init(width: 50, height: 50), padding: UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 20))
-        buttonsStackView.anchor(top: nil, leading: nil, trailing: nil, bottom: view.bottomAnchor,size: .init(width: 300, height: 80),padding: .init(top: 0, left: 0, bottom: 40, right: 0))
+        buttonsStackView.anchor(top: nil, leading: nil, trailing: nil, bottom: view.bottomAnchor,size: .init(width: 300, height: 80),padding: .init(top: 0, left: 0, bottom: 50, right: 0))
         buttonsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
