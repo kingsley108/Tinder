@@ -117,7 +117,7 @@ class UserDetailsController: UIViewController, UIScrollViewDelegate {
         detailsScrollView.fillToSuperView()
         blurEffect.anchor(top:view.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: detailsScrollView.safeAreaLayoutGuide.topAnchor)
         userInformationLabel.anchor(top: userImageView.bottomAnchor, leading: detailsScrollView.leadingAnchor, trailing: detailsScrollView.trailingAnchor, bottom: detailsScrollView.bottomAnchor, padding: UIEdgeInsets.init(top: 16, left: 16, bottom: 0, right: 0))
-        dismissButton.anchor(top: nil, leading: nil, trailing:userImageView.trailingAnchor, bottom: userImageView.bottomAnchor,size: .init(width: 50, height: 50), padding: UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 20))
+        dismissButton.anchor(top: nil, leading: nil, trailing:userImageView.trailingAnchor, bottom: userImageView.bottomAnchor,size: .init(width: 50, height: 50), padding: UIEdgeInsets(top: 0, left: 0, bottom: -20, right: 20))
         buttonsStackView.anchor(top: nil, leading: nil, trailing: nil, bottom: view.bottomAnchor,size: .init(width: 300, height: 80),padding: .init(top: 0, left: 0, bottom: 50, right: 0))
         buttonsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }

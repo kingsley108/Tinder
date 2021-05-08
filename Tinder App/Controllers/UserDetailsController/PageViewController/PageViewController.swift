@@ -8,7 +8,16 @@
 import Foundation
 import UIKit
 
-class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
+class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    
+    var nextImageTrackerStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 12
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        return stackView
+    }()
+    
     
     var cardModel: CardViewModel? {
         didSet {
@@ -29,9 +38,28 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
+        self.delegate = self
+        setUpTabBar()
     }
     
+    fileprivate func setUpTabBar() {
+        view.addSubview(nextImageTrackerStackView)
+        cardModel?.imageAsset.forEach({ images in
+            let nextAssetIcon = UIView()
+            nextAssetIcon.backgroundColor = UIColor(white: 0, alpha: 0.1)
+            nextAssetIcon.layer.cornerRadius = 2
+            nextImageTrackerStackView.addArrangedSubview(nextAssetIcon)
+        })
+        nextImageTrackerStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: nil, size: .init(width: 0, height: 4), padding: .init(top: 4, left: 8, bottom: 0, right: 8))
+        nextImageTrackerStackView.arrangedSubviews[0].backgroundColor = .white
+    }
     
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard let currentVc = viewControllers?.first else {return}
+        guard let index = controllers.firstIndex(of: currentVc) else {return}
+        nextImageTrackerStackView.arrangedSubviews.forEach({$0.backgroundColor = UIColor(white: 0, alpha: 0.1)})
+        nextImageTrackerStackView.arrangedSubviews[index].backgroundColor = .white
+    }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
