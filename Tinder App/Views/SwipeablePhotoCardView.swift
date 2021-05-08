@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 protocol HomeUserDetailsTransition {
-    func transitionToUserDetails()
+    func transitionToUserDetails(cardModel: CardViewModel)
 }
 
 class SwipeablePhotoCardView: UIView {
@@ -18,6 +18,7 @@ class SwipeablePhotoCardView: UIView {
     var tapBar = UIStackView()
     var index = 0
     var imagesCount: Int?
+
     var cardObject: CardViewModel? {
         didSet {
             guard let user = self.cardObject else { return}
@@ -64,7 +65,8 @@ class SwipeablePhotoCardView: UIView {
     }()
     
     @objc fileprivate func displayUserDetailsPage() {
-        delegate?.transitionToUserDetails()
+        guard let cardObject = self.cardObject else {return}
+        delegate?.transitionToUserDetails(cardModel: cardObject)
     }
     
     override init(frame: CGRect) {
@@ -130,7 +132,6 @@ class SwipeablePhotoCardView: UIView {
     
     @objc func handleTapGesture(gesture: UITapGestureRecognizer) {
         let location = gesture.location(in: nil)
-        print(location.x)
         let didTapFoward = (Int(location.x) > 156) ? true : false
         didSkipFoward(for: didTapFoward)
     }

@@ -20,11 +20,10 @@ extension HomeController: HomeControllerUserRequest {
 }
 
 extension HomeController: HomeUserDetailsTransition {
-    func transitionToUserDetails() {
+    func transitionToUserDetails(cardModel: CardViewModel) {
         let userDetailsPage = UserDetailsController()
+        userDetailsPage.cardModel = cardModel
         userDetailsPage.modalPresentationStyle = .fullScreen
         present(userDetailsPage, animated: true)
     }
-    
-    
 }

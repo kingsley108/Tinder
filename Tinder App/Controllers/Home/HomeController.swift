@@ -23,7 +23,7 @@ class HomeController: UIViewController {
         hud.shadow = JGProgressHUDShadow(color: .black, offset: .zero, radius: 5.0, opacity: 0.1)
         return hud
     }()
-    let cardContainer = SwipeablePhotoCardView()
+    let cardContainer = UIView()
     
     var lastFetchedUser: User? = nil
     
@@ -36,7 +36,6 @@ class HomeController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        cardContainer.delegate = self
         if Auth.auth().currentUser == nil {
             let loginController = LoginController()
             loginController.delegate = self
@@ -102,6 +101,7 @@ class HomeController: UIViewController {
     
     fileprivate func setUpCards(user: CardViewModel) {
         let swipeableUser = SwipeablePhotoCardView()
+        swipeableUser.delegate = self
         swipeableUser.cardObject = user
         cardContainer.addSubview(swipeableUser)
         cardContainer.sendSubviewToBack(swipeableUser)
